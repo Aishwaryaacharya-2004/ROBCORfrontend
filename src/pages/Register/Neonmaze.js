@@ -60,7 +60,7 @@ const Register = () => {
     setSuccess(null);
 
     try {
-      await axios.post("http://localhost:5000/api/register", {
+      await axios.post("https://robcorbackend-3.onrender.com/api/register", {
         event: selectedEvent,
         members: formData,
       }, { withCredentials: true });
