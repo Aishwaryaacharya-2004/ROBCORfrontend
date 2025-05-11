@@ -1,40 +1,92 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './Navbar.css'; // Import our custom styles
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import "./Navbar.css";
+import menuBg from "../assets/demo.jpg";
+import logo from "../assets/Logo.png"
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-    document.body.style.overflow = isOpen ? 'auto' : 'hidden';
+  const navItems = ["Home", "Events", "Sponsors", "About", "Contacts"];
+
+  const handleNavClick = (id) => {
+    setMenuOpen(false);
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollTo: id } });
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
-  const closeMenu = () => {
-    setIsOpen(false);
-    document.body.style.overflow = 'auto';
-  };
+  useEffect(() => {
+    if (location.pathname === "/" && location.state?.scrollTo) {
+      const el = document.getElementById(location.state.scrollTo);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+        window.history.replaceState({}, document.title);
+      }
+    }
+  }, [location]);
 
   return (
-    <>
-      <nav className="navbar navbar-dark bg-dark fixed-top cyberpunk-topbar">
-        <div className="container-fluid">
-          <a className="navbar-brand fw-bold neon-text" href="#landing">ROBOCOR</a>
-          <button className="navbar-toggler" onClick={toggleMenu}>
-            <span className="navbar-toggler-icon"></span>
-          </button>
-        </div>
-      </nav>
+    <nav className="navbar" role="navigation">
+      <div className="logo">
+  <img src={logo} alt="Logo" className="logo-img" />
+</div>
 
-      {isOpen && (
-        <div className="cyberpunk-sidebar">
-          <a className="neon-button" href="#landing" onClick={closeMenu}>Home</a>
-          <a className="neon-button" href="#events" onClick={closeMenu}>Events</a>
-          <a className="neon-button" href="#sponsors" onClick={closeMenu}>Sponsors</a>
-          <a className="neon-button" href="#footer" onClick={closeMenu}>About</a>
+      {/* Desktop Nav - Only show when menu is NOT open */}
+      {!menuOpen && (
+        <ul className="nav-links">
+          {navItems.map((item, idx) => (
+            <li key={idx}>
+              <a
+                onClick={() => handleNavClick(item.toLowerCase())}
+                className="nav-button"
+              >
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {/* Hamburger Icon */}
+      <div
+        className={`hamburger ${menuOpen ? "open" : ""}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Menu Toggle"
+      >
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      {menuOpen && (
+        <div
+          className="overlay"
+          style={{ backgroundImage: `url(${menuBg})`,filter:'grayscale(50%)' }}
+        >
+          <ul className="overlay-menu">
+            {navItems.map((item, idx) => (
+              <li key={idx}>
+                <a
+                  className="btn neon-btn"
+                  onClick={() => handleNavClick(item.toLowerCase())}
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
-    </>
+    </nav>
   );
 };
 

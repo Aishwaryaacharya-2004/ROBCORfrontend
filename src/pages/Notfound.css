@@ -1,0 +1,26 @@
+.notfound-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.notfound-image {
+  width: 300px;
+  max-width: 100%;
+}
+
+.notfound-text {
+  max-width: 500px;
+  color:yellow;
+}
+
+.notfound-home-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #00f;
+  text-decoration: underline;
+}
