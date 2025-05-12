@@ -19,6 +19,7 @@ import robotImg from '../assets/character1.png';
 import characterMob from '../assets/charactermob.png'; // adjust the path based on your file location
 
 
+import { Link } from 'react-router-dom';
 
 
 import Slider from "react-slick";
