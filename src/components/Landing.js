@@ -379,7 +379,7 @@ const Landing = () => {
          <p className="event-info"><strong>Time -</strong> {event.date}</p>
          <p className="event-info"><strong>Venue -</strong> {event.venue}</p>
 
-          <a href={event.route} className="cyber-button">Register</a>
+          <Link to={event.route} className="cyber-button">Register</Link>
         </div>
       </div>
     </div>
