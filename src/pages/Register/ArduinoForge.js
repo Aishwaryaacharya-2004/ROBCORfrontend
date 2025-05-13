@@ -6,6 +6,7 @@ import projectSymposium from '../../assets/compressed/projectSymposium.jpg';
 import rulebook from '../../assets/rulebook.pdf';
 import character4 from '../../assets/compressed/character4.jpg';
 import backgroundImg from '../../assets/demo.jpg';
+import Loading from '../../components/Landing.js';
 
 const eventRules = {
   "Binary Duels": { min: 1, max: 2 },
@@ -36,6 +37,7 @@ const Register = () => {
   const [registrationClosed, setRegistrationClosed] = useState(false);
   const [animateImage, setAnimateImage] = useState(false);
   const [validForm, setValidForm] = useState(false);
+  
 
   useEffect(() => {
     setAnimateImage(true);
@@ -94,6 +96,10 @@ const Register = () => {
   const handleProceedClick = () => {
     setShowRegistrationForm(true);
   };
+  if (loading) {
+  return <Loading />;
+}
+
 
   if (registrationClosed) {
     return (
