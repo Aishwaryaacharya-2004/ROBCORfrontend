@@ -1,22 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Landing.css";
-import backgroundImg from '../assets/demo.jpg';
-import bytewarsImg from '../assets/compressed/bytewars.jpg';
-import droidkickImg from '../assets/compressed/droidkick.jpg';
-import droidraceImg from '../assets/compressed/droidrace.jpg';
-import projectSymposiumImg from '../assets/compressed/projectSymposium.jpg';
-import quizImg from '../assets/compressed/quiz.jpg';
-import starcrawlImg from '../assets/compressed/starcrawl.jpg';
-import starlinkImg from '../assets/compressed/starlink.jpg';
-import Aboutimg  from '../assets/compressed/IMAGE1.jpg';
 import MouseParticles from "react-mouse-particles";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from 'framer-motion';
 import { ReactTyped } from "react-typed";
 import { Container, Row, Col } from "react-bootstrap";
-import robotImg from '../assets/character1.png';
-import characterMob from '../assets/charactermob.png'; // adjust the path based on your file location
+// adjust the path based on your file location
 //import CountDownTimer from './Countdowntimer';
 
 import { Link } from 'react-router-dom';
@@ -24,13 +14,6 @@ import { Link } from 'react-router-dom';
 
 import Slider from "react-slick";
 
-import sponsor1 from '../assets/compressed/sponsor1.png';
-import sponsor2 from '../assets/compressed/sponsor2.jpg';
-import sponsor3 from '../assets/compressed/sponsor3.png';
-import sponsor4 from '../assets/compressed/sponsor4.jpeg';
-import sponsor5 from '../assets/compressed/sponsor5.jpeg';
-import sponsor6 from '../assets/compressed/sponsor6.jpeg';
-import sponsor7 from '../assets/compressed/sponsor7.jpeg';
 
 
 const Landing = () => {
@@ -71,7 +54,7 @@ const Landing = () => {
       className="landing-top"
       style={{
         height: '70vh',
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${backgroundImg})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), URL("https://res.cloudinary.com/dfli7mciv/image/upload/v1747152354/demo_ihdk9v.jpg")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -129,7 +112,7 @@ const Landing = () => {
       }}
     >
       <img
-        src={robotImg}
+        src="https://res.cloudinary.com/dy52wmqeb/image/upload/v1747083814/character1_a3wvl8.png"
         alt="Robot"
         style={{
           position: 'absolute',
@@ -174,7 +157,7 @@ const Landing = () => {
           left: 0;
           width: 100%;
           height: 100%;
-          background-image: url(${backgroundImg});
+          background-image: url("https://res.cloudinary.com/dfli7mciv/image/upload/v1747152354/demo_ihdk9v.jpg");
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
@@ -266,7 +249,7 @@ const Landing = () => {
 
   {/* Centered Character Image Across Yellow/Black Border */}
   <div className="center-card">
-    <img src={characterMob} alt="Hero" />
+    <img src="https://res.cloudinary.com/dy52wmqeb/image/upload/v1747083815/charactermob_wqnu1d.png" alt="Hero" />
   </div>
 {/* <div className="countdown-mobile">
   <CountDownTimer
@@ -302,7 +285,7 @@ const Landing = () => {
   {[
     {
       title: "Binary Duels",
-      img: bytewarsImg,
+     img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151250/bytewars_kuvbgk.jpg",
       about: "Competitive coding battle for sharp minds.",
       date: "10:30 AM",
       venue: "TEL 101",
@@ -310,7 +293,7 @@ const Landing = () => {
     },
     {
       title: "Cyber Track",
-      img: droidraceImg,
+      img: "https://res.cloudinary.com/dfli7mciv/image/upload/v1747151257/droidrace_dojqd3.jpg",
       about: "Race your innovation, follow the line, and conquer the track!",
       date: "12:00 PM",
       venue: "Lab 203",
@@ -318,7 +301,7 @@ const Landing = () => {
     },
     {
       title: "Cyber Kick",
-      img: droidkickImg,
+       img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151256/droidkick_clmrpl.jpg",
       about: "Kick, score, and rule the field with your robotic soccer skills!",
       date: "11:00 AM",
       venue: "Room B-4",
@@ -326,7 +309,7 @@ const Landing = () => {
     },
     {
       title: "Project Conclave",
-      img: projectSymposiumImg,
+       img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151974/WhatsApp_Image_2025-05-13_at_8.53.51_PM_uhxjfo.jpg",
       about: "Showcase your brilliance, innovate, and lead the future at Project Conclave!",
       date: "Starts 6 PM",
       venue: "Cyber Lab",
@@ -334,7 +317,7 @@ const Landing = () => {
     },
     {
       title: "Nexus Quiz",
-      img: quizImg,
+       img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151258/quiz_xsdgoh.jpg",
       about: "Test your knowledge, challenge your mind, and emerge as the ultimate quiz champion!",
       date: "2:00 PM",
       venue: "Hall A",
@@ -342,7 +325,7 @@ const Landing = () => {
     },
     {
       title: "Neon Run",
-      img: starcrawlImg,
+       img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151259/starcrawl_jixzio.jpg",
       about: "Conquer the toughest terrains, endure the rugged race, and emerge victorious!",
       date: "4:00 PM",
       venue: "Mech Arena",
@@ -350,7 +333,7 @@ const Landing = () => {
     },
     {
       title: "Neon Maze",
-      img: starlinkImg,
+      img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151259/starlink_pxek8d.jpg",
       about: "Navigate the glow, command with Bluetooth, and master the Neon Maze!",
       date: "3:00 PM",
       venue: "Room D-2",
@@ -358,7 +341,7 @@ const Landing = () => {
     },
     {
       title: "Arduino Forge",
-      img: projectSymposiumImg,
+      img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151259/projectSymposium_o3xtwd.jpg",
       about: "Debug, design, and dominate the circuit at Arduino Forge!",
       date: "3:00 PM",
       venue: "Room D-2",
@@ -366,7 +349,7 @@ const Landing = () => {
     },
     {
       title: "BGMI Punks",
-      img: projectSymposiumImg,
+     img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151972/WhatsApp_Image_2025-05-13_at_8.09.37_PM_k7kotp.jpg",
       about: "Drop in, gear up, and battle your way to glory in BGMI Punks!",
       date: "3:00 PM",
       venue: "Room D-2",
@@ -421,7 +404,7 @@ const Landing = () => {
     <div className="row align-items-center">
       <div className="col-md-6 mb-4 mb-md-0">
         <img
-  src={Aboutimg}
+   src="https://res.cloudinary.com/dfli7mciv/image/upload/v1747151258/IMAGE1_hpqx0a.jpg"
   alt="ROBOCOR Robotics Competition"
   className="img-fluid rounded shadow"
   style={{
@@ -480,7 +463,7 @@ const Landing = () => {
     },
   ]}
 >
-  {[sponsor1, sponsor2, sponsor3, sponsor4, sponsor5, sponsor6,sponsor7].map((sponsor, index) => (
+ {["https://res.cloudinary.com/dfli7mciv/image/upload/v1747152473/sponsor6_jqeh6g.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152473/sponsor4_bfyjdw.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152474/sponsor7_k0wnbt.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152473/sponsor5_s7u5m1.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152472/sponsor3_tri1am.png","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152472/sponsor2_vb6wlb.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152471/sponsor1_ytnv1k.png"].map((sponsor, index) => (
     <div key={index} className="px-3">
       <div className="p-3 bg-dark rounded shadow sponsor-carousel-card">
         <img
