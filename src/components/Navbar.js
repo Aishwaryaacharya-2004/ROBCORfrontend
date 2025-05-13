@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
-import menuBg from "../assets/demo.jpg";
+//import menuBg from "../assets/demo.jpg";
 import logo from "../assets/Logo.png"
 
 const Navbar = () => {
@@ -70,9 +70,10 @@ const Navbar = () => {
       {menuOpen && (
         <div
           className="overlay"
-          style={{ backgroundImage: `url(${menuBg})`,filter:'grayscale(50%)' }}
+          style={{ backgroundImage: `url("https://res.cloudinary.com/dfli7mciv/image/upload/v1747155680/image_w4iog5.jpg")` }}
         >
-          <ul className="overlay-menu">
+          <div>
+            <ul className="overlay-menu">
             {navItems.map((item, idx) => (
               <li key={idx}>
                 <a
@@ -84,6 +85,7 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+          </div>
         </div>
       )}
     </nav>
