@@ -1,0 +1,313 @@
+/* Spinner container */
+body {
+  background: #0a0a0a;
+  color: #fff700;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 20px;
+  gap: 40px;
+}
+
+/* General spinner box */
+.spinner-box {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 247, 0, 0.03);
+  border-radius: 20px;
+  border: 1px solid #555;
+}
+
+/* Leo spinner */
+.leo-border-1,
+.leo-border-2 {
+  position: absolute;
+  border-radius: 50%;
+  animation: rotate 1.5s linear infinite;
+}
+
+.leo-border-1 {
+  border-top: 5px solid #fff700;
+  width: 140px;
+  height: 140px;
+}
+
+.leo-border-2 {
+  border-right: 5px solid #555;
+  width: 120px;
+  height: 120px;
+  animation-direction: reverse;
+}
+
+/* Solar spinner */
+.solar-system {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.orbit,
+.planet {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.sun {
+  width: 30px;
+  height: 30px;
+  background: #fff700;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.earth-orbit,
+.venus-orbit,
+.mercury-orbit {
+  border: 1px dashed #555;
+  animation: rotate 6s linear infinite;
+}
+
+.earth-orbit {
+  width: 100px;
+  height: 100px;
+}
+
+.venus-orbit {
+  width: 80px;
+  height: 80px;
+  animation-duration: 4s;
+}
+
+.mercury-orbit {
+  width: 60px;
+  height: 60px;
+  animation-duration: 2s;
+}
+
+.planet {
+  width: 10px;
+  height: 10px;
+  background: #fff700;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Pulse bubbles */
+.pulse-container {
+  display: flex;
+  gap: 10px;
+}
+
+.pulse-bubble {
+  width: 16px;
+  height: 16px;
+  background-color: #fff700;
+  border-radius: 50%;
+  animation: pulse 0.6s infinite alternate;
+}
+
+.pulse-bubble:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.pulse-bubble:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Configure spinner */
+.configure-border-1,
+.configure-border-2 {
+  position: absolute;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+}
+
+.configure-border-1 {
+  border-left: 3px solid #fff700;
+  border-right: 3px solid #555;
+  width: 120px;
+  height: 120px;
+}
+
+.configure-border-2 {
+  border-top: 3px solid #555;
+  border-bottom: 3px solid #fff700;
+  width: 90px;
+  height: 90px;
+  animation-direction: reverse;
+}
+
+/* Three-quarter spinner */
+.three-quarter-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #fff700;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Animations */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translateX(50%) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0.6;
+  }
+}
+
+/* ========================== */
+/*       MEDIA QUERIES       */
+/* ========================== */
+
+@media (max-width: 1200px) {
+  .spinner-box {
+    width: 250px;
+    height: 250px;
+  }
+
+  .leo-border-1,
+  .leo-border-2,
+  .configure-border-1,
+  .configure-border-2,
+  .earth-orbit,
+  .venus-orbit,
+  .mercury-orbit {
+    width: 100px;
+    height: 100px;
+  }
+
+  .sun {
+    width: 25px;
+    height: 25px;
+  }
+
+  .planet {
+    width: 8px;
+    height: 8px;
+  }
+
+  .three-quarter-spinner {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .spinner-box {
+    width: 200px;
+    height: 200px;
+  }
+
+  .leo-border-1,
+  .leo-border-2,
+  .configure-border-1,
+  .configure-border-2,
+  .earth-orbit,
+  .venus-orbit,
+  .mercury-orbit {
+    width: 80px;
+    height: 80px;
+  }
+
+  .sun {
+    width: 20px;
+    height: 20px;
+  }
+
+  .planet {
+    width: 6px;
+    height: 6px;
+  }
+
+  .three-quarter-spinner {
+    width: 30px;
+    height: 30px;
+  }
+
+  .pulse-container {
+    width: 80px;
+  }
+
+  .pulse-bubble {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .spinner-box {
+    width: 150px;
+    height: 150px;
+  }
+
+  .leo-border-1,
+  .leo-border-2,
+  .configure-border-1,
+  .configure-border-2,
+  .earth-orbit,
+  .venus-orbit,
+  .mercury-orbit {
+    width: 60px;
+    height: 60px;
+  }
+
+  .sun {
+    width: 16px;
+    height: 16px;
+  }
+
+  .planet {
+    width: 5px;
+    height: 5px;
+  }
+
+  .three-quarter-spinner {
+    width: 25px;
+    height: 25px;
+  }
+
+  .pulse-container {
+    width: 60px;
+  }
+
+  .pulse-bubble {
+    width: 12px;
+    height: 12px;
+  }
+}
