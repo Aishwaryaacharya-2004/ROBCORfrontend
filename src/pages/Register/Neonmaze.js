@@ -18,7 +18,9 @@ export const eventRules = {
   "Neon Run": { min: 1, max: 4 },
   "BGMI Punks": { min: 1, max: 4 },
 };
-
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const phoneRegex = /^[6-9]\d{9}$/;
+const usnRegex = /^[1-9][A-Z]{2}\d{2}[A-Z]{2}\d{3}$/i;
 const Register = () => {
   const [showRegistrationForm, setShowRegistrationForm] = useState(false);
   const [clicked, setClicked] = useState(false);
@@ -30,6 +32,8 @@ const Register = () => {
   const [success, setSuccess] = useState(null);
   const [registrationClosed, setRegistrationClosed] = useState(false);
   const [animateImage, setAnimateImage] = useState(false);
+   const [validForm, setValidForm] = useState(false);
+
 
   useEffect(() => {
     setAnimateImage(true);
@@ -39,6 +43,18 @@ const Register = () => {
     const { min } = eventRules[selectedEvent];
     setFormData(Array.from({ length: min }, () => ({ name: "", email: "", usn: "", phone: "" })));
   }, [selectedEvent]);
+
+  useEffect(() => {
+    const isValid = formData.every(
+      (p) =>
+        p.name.trim() !== "" &&
+        emailRegex.test(p.email) &&
+        phoneRegex.test(p.phone) &&
+        usnRegex.test(p.usn)
+    );
+    setValidForm(isValid);
+  }, [formData]);
+
 
   const handleChange = (index, e) => {
     const newFormData = [...formData];
