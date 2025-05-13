@@ -7,8 +7,6 @@ import rulebook from '../../assets/rulebook.pdf';
 import character1 from '../../assets/compressed/character1.jpg';
 import backgroundImg from '../../assets/demo.jpg';
 
-
-
 export const eventRules = {
   "Binary Duels": { min: 1, max: 2 },
   "Arduino Forge": { min: 1, max: 3 },
@@ -16,28 +14,29 @@ export const eventRules = {
   "Neon Maze": { min: 1, max: 4 },
   "Project Conclave": { min: 1, max: 4 },
   "Cyber Kick": { min: 1, max: 4 },
-  "Nexus Quiz":{min:1,max:1},
-  "Neon Run":{min:1,max:4},
-  "BGMI Punks":{min:1,max:4},
+  "Nexus Quiz": { min: 1, max: 1 },
+  "Neon Run": { min: 1, max: 4 },
+  "BGMI Punks": { min: 1, max: 4 },
 };
+
+// Validators
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phoneRegex = /^[6-9]\d{9}$/;
 const usnRegex = /^[1-9][A-Z]{2}\d{2}[A-Z]{2}\d{3}$/i;
+
 const Register = () => {
   const [showRegistrationForm, setShowRegistrationForm] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [iframe, setIframe] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState("Binary Duels"); // default for demo
+  const [selectedEvent, setSelectedEvent] = useState("Binary Duels");
   const [formData, setFormData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
-  const [registrationClosed, setRegistrationClosed] = useState(false); // toggle manually if needed
+  const [registrationClosed, setRegistrationClosed] = useState(false);
   const [animateImage, setAnimateImage] = useState(false);
   const [validForm, setValidForm] = useState(false);
 
-
-  
   useEffect(() => {
     setAnimateImage(true);
   }, []);
@@ -46,7 +45,8 @@ const Register = () => {
     const { min } = eventRules[selectedEvent];
     setFormData(Array.from({ length: min }, () => ({ name: "", email: "", usn: "", phone: "" })));
   }, [selectedEvent]);
-   useEffect(() => {
+
+  useEffect(() => {
     const isValid = formData.every(
       (p) =>
         p.name.trim() !== "" &&
@@ -77,13 +77,13 @@ const Register = () => {
     setSuccess(null);
 
     try {
-      await axios.post("https://robcorbackend-5.onrender.com/api/register", {
+      await axios.post("http://localhost:5000/api/register", {
         event: selectedEvent,
         members: formData,
       }, { withCredentials: true });
 
       setSuccess("Successfully registered!");
-      setTimeout(() => setClicked(true), 1500); // Proceed to checkout
+      setTimeout(() => setClicked(true), 1500);
     } catch (error) {
       setError(error.response?.data?.message || "Something went wrong!");
     } finally {
@@ -98,235 +98,177 @@ const Register = () => {
   if (registrationClosed) {
     return (
       <div className="cyber-bg d-flex flex-column justify-content-center align-items-center vh-100 text-center text-light">
-        <h1 className="neon-text">Online registrations closed</h1>
-        <p className="mt-3">On-spot Registrations at Media Centre</p>
+        <h1 className="sub-text">Online registrations closed</h1>
+        <p className="subsub-text">On-spot Registrations at Media Centre</p>
       </div>
     );
   }
 
-  // Payment iframe page
   if (clicked) {
     return (
       <div style={{ display: iframe ? 'block' : 'none' }}>
-       <iframe
+        <iframe
           onLoad={() => setIframe(true)}
           width="100%"
           height="100%"
           style={{ border: 'none', minHeight: "100vh" }}
-          src="https://www.yepdesk.com/embed/buy-tickets/68233671c9e77c0001f16969/private/41854nuhco"
+          src="https://www.yepdesk.com/embed/buy-tickets/682338c4c9e77c0001f170ba/private/ukmvh2dqm3"
         />
       </div>
     );
   }
 
-  // Registration form page
   if (showRegistrationForm) {
     return (
-       <div className="cyber-bg cyber-content-wrapper">
+      <div className="cyber-bg cyber-content-wrapper">
         <style>
           {`
             .cyber-bg::before {
               background-image: url(${backgroundImg});
             }
-      
-            @media (max-width: 768px) {
-              .arc-character-img {
-                max-width: 100%;
-                height: auto;
-                margin-bottom: 1rem;
-              }
-              .form-container {
-                width: 100%;
-                padding: 1rem;
-              }
-            }
-      
-            @media (min-width: 768px) {
-              .arc-character-img {
-                max-width: 300px;
-              }
-              .form-container {
-                padding: 1rem;
-              }
-            }
           `}
         </style>
-      
+
         <div className="cyber-content">
-          <div className="cyber-card">
-            {/* Flex layout switches based on screen width */}
-            <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
-              {/* Image section */}
-              <div className="text-center" style={{ flex: 1, padding: '1rem' }}>
-                <img
-        src={character1}
-        alt="Cyberpunk Character"
-        className="arc-character-img event-image cyber-img"
-      />
-      
-              </div>
-      
-              {/* Form section */}
-              <div className="form-container" style={{ flex: 1 }}>
-                <h1 className="mt-4">Binary Duels</h1>
-                <p className="arc-quote mt-4">
-                  "Competitive coding battle for sharp minds."
-                </p>
-      
-                <div className="arc-form-card mt-4">
-                  {error && <Alert variant="danger">{error}</Alert>}
-                  {success && <Alert variant="success">{success}</Alert>}
-      
-                  <Form onSubmit={handleSubmit}>
-                    {formData.map((participant, index) => (
-                      <div
-                        key={index}
-                        className="mb-3 p-3 border rounded text-light bg-dark"
-                      >
-                        <h5 className="arc-neon-text">Participant {index + 1}</h5>
-                        <Form.Group className="mb-2">
-                          <Form.Label>Name</Form.Label>
-                          <Form.Control
-                            className="arc-input"
-                            type="text"
-                            name="name"
-                            value={participant.name}
-                            onChange={(e) => handleChange(index, e)}
-                            required
-                          />
-                        </Form.Group>
-                        <Form.Group className="mb-2">
-                          <Form.Label>Email</Form.Label>
-                          <Form.Control
-                            className="arc-input"
-                            type="email"
-                            name="email"
-                            value={participant.email}
-                            onChange={(e) => handleChange(index, e)}
-                            required
-                          />
-                        </Form.Group>
-                        <Form.Group className="mb-2">
-                          <Form.Label>USN</Form.Label>
-                          <Form.Control
-                            className="arc-input"
-                            type="text"
-                            name="usn"
-                            value={participant.usn}
-                            onChange={(e) => handleChange(index, e)}
-                            required
-                          />
-                        </Form.Group>
-                        <Form.Group className="mb-2">
-                          <Form.Label>Phone Number</Form.Label>
-                          <Form.Control
-                            className="arc-input"
-                            type="text"
-                            name="phone"
-                            value={participant.phone}
-                            onChange={(e) => handleChange(index, e)}
-                            required
-                          />
-                        </Form.Group>
-                      </div>
-                    ))}
-      
-                    {formData.length < eventRules[selectedEvent].max && (
-                      <Button
-                        className="cyber-button mb-3 w-100"
-                        onClick={handleAddMember}
-                      >
-                        Add Member
-                      </Button>
-                    )}
-      
-                    <Button
-                      type="submit"
-                      className="cyber-button mb-3 w-100"
-                      disabled={loading}
-                    >
-                      {loading ? <Spinner animation="border" size="sm" /> : 'Submit & Pay'}
+          <div className="cyber-card d-flex flex-column flex-md-row justify-content-center align-items-center">
+            <div className="text-center" style={{ flex: 1, padding: '1rem' }}>
+              <img src={character1} alt="Cyberpunk Character" className="arc-character-img event-image cyber-img" />
+            </div>
+
+            <div className="form-container" style={{ flex: 1 }}>
+              <h1 className="mt-4">Binary Duels</h1>
+              <p className="arc-quote mt-4">"Outcode, outsmart, outlast in the ultimate coding face-off!"</p>
+
+              <div className="arc-form-card mt-4">
+                {error && <Alert variant="danger">{error}</Alert>}
+                {success && <Alert variant="success">{success}</Alert>}
+
+                <Form onSubmit={handleSubmit}>
+                  {formData.map((participant, index) => (
+                    <div key={index} className="mb-3 p-3 border rounded text-light bg-dark">
+                      <h5 className="arc-neon-text">Participant {index + 1}</h5>
+
+                      <Form.Group className="mb-2">
+                        <Form.Label>Name</Form.Label>
+                        <Form.Control
+                          className="arc-input"
+                          type="text"
+                          name="name"
+                          value={participant.name}
+                          onChange={(e) => handleChange(index, e)}
+                          required
+                        />
+                      </Form.Group>
+
+                      <Form.Group className="mb-2">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control
+                          className="arc-input"
+                          type="email"
+                          name="email"
+                          value={participant.email}
+                          onChange={(e) => handleChange(index, e)}
+                          isInvalid={participant.email && !emailRegex.test(participant.email)}
+                          required
+                        />
+                      </Form.Group>
+
+                      <Form.Group className="mb-2">
+                        <Form.Label>USN</Form.Label>
+                        <Form.Control
+                          className="arc-input"
+                          type="text"
+                          name="usn"
+                          value={participant.usn}
+                          onChange={(e) => handleChange(index, e)}
+                          isInvalid={participant.usn && !usnRegex.test(participant.usn)}
+                          required
+                        />
+                      </Form.Group>
+
+                      <Form.Group className="mb-2">
+                        <Form.Label>Phone Number</Form.Label>
+                        <Form.Control
+                          className="arc-input"
+                          type="text"
+                          name="phone"
+                          value={participant.phone}
+                          onChange={(e) => handleChange(index, e)}
+                          isInvalid={participant.phone && !phoneRegex.test(participant.phone)}
+                          required
+                        />
+                      </Form.Group>
+                    </div>
+                  ))}
+
+                  {formData.length < eventRules[selectedEvent].max && (
+                    <Button className="cyber-button mb-3 w-100" onClick={handleAddMember}>
+                      Add Member
                     </Button>
-                  </Form>
-                </div>
+                  )}
+
+                  <Button
+                    type="submit"
+                    className="cyber-button mb-3 w-100"
+                    disabled={loading || !validForm}
+                  >
+                    {loading ? <Spinner animation="border" size="sm" /> : 'Submit & Pay'}
+                  </Button>
+                </Form>
               </div>
             </div>
           </div>
         </div>
       </div>
-          );
-        }
-  
+    );
+  }
 
-  // Event details page
   return (
-    <div
-  className="container-fluid cyber-bg"
-  style={{
-    position: 'relative',
-  }}
->
-  {/* Inline style for background image overlay */}
-  <style>
-    {`
-      .cyber-bg::before {
-        background-image: url(${backgroundImg});
-      }
-    `}
-  </style>
-  <h1 className="neon-text">Register</h1>
+    <div className="container-fluid cyber-bg" style={{ position: 'relative' }}>
+      <style>
+        {`
+          .cyber-bg::before {
+            background-image: url(${backgroundImg});
+          }
+        `}
+      </style>
 
-  <div className="cyber-content">
-    <div className="cyber-card row">
-      <div className="col-md-6 text-center mb-3 mb-md-0">
-        <img src={bytewars} className="event-image" alt="bytewars" />
-      </div>
+      <h1 className="neon-text">Register</h1>
+      <div className="cyber-content">
+        <div className="cyber-card row">
+          <div className="col-md-6 text-center mb-3 mb-md-0">
+            <img src={bytewars} className="event-image" alt="event" />
+          </div>
 
-      <div className="col-md-6">
-        <h2 className="mt-4">{selectedEvent}</h2>
-        <p className="cyber-head" ><strong >Timing:</strong> 10:30 AM</p>
-        <p className="cyber-head"><strong >Venue:</strong> TEL 101</p>
-        <p className="cyber-head"><strong >Team Size:</strong> {eventRules[selectedEvent].min} - {eventRules[selectedEvent].max}</p>
-        <p className="cyber-head"><strong >Fee:</strong> ₹100</p>
+          <div className="col-md-6">
+            <h2 className="mt-4">{selectedEvent}</h2>
+            <p className="cyber-head"><strong>Timing:</strong> 11:00 AM</p>
+            <p className="cyber-head"><strong>Venue:</strong> CS LAB 1</p>
+            <p className="cyber-head"><strong>Team Size:</strong> {eventRules[selectedEvent].min} - {eventRules[selectedEvent].max}</p>
+            <p className="cyber-head"><strong>Fee:</strong> ₹100</p>
 
-        <h4 className="mt-4">Event Rules:</h4>
-        <div className="content">
-          <p>- 40 coding aptitude questions in round 1.</p>
-          <p>- Separate round for 1st years with a consolation prize.</p>
-          <p>- Top 10 teams selected.</p>
-          <p>- 2nd round on HackerRank with 4 questions.</p>
-          <p>- Report 30 mins before start time.</p>
-          <p>- ID cards must be signed by the coordinator.</p>
-          <p>- No time extensions.</p>
-          <p>- Timing used as tiebreaker.</p>
-          <p>- No copy-pasting or tab switching allowed.</p>
+            <h4 className="mt-4">Event Rules:</h4>
+            <div className="content">
+              <p>- 2 rounds: Debugging + Code Battle</p>
+              <p>- Round 1: Elimination based on bug fixes</p>
+              <p>- Round 2: Head-to-head code duel</p>
+              <p>- Laptops will be provided or use your own</p>
+              <p>- Decision of judges is final</p>
+            </div>
+
+            <div className="container-fluid mt-4">
+              <div className="container text-center mt-4">
+                <div className="d-flex flex-column flex-sm-row justify-content-start align-items-center gap-3 ps-sm-4">
+                  <a href={rulebook} download className="cyber-button">RULE BOOK</a>
+                  <button className="cyber-button" onClick={handleProceedClick}>PROCEED</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-
-        <div className="container-fluid mt-4">
-  <div className="container px-3 py-4">
-  <div className="container text-center mt-4">
-  <div className="container mt-4">
-  <div className="d-flex flex-column flex-sm-row justify-content-start align-items-center gap-3 ps-sm-4">
-    <a href={rulebook} download className="cyber-button">
-      RULE BOOK
-    </a>
-    <button className="cyber-button" onClick={handleProceedClick}>
-      PROCEED
-    </button>
-  </div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
       </div>
     </div>
-  </div>
-</div>
   );
 };
 
