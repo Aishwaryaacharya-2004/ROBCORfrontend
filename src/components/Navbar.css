@@ -97,7 +97,6 @@
   overflow: hidden;
 }
 
-/* 🔧 Background image container with grayscale */
 .overlay-bg {
   position: absolute;
   top: 0;
@@ -105,12 +104,10 @@
   width: 100%;
   height: 100%;
   background-position: center;
-  background-size: cover;
+  background-size: contain; /* Adjusted from cover to contain */
   background-repeat: no-repeat;
-  filter: grayscale(100%);
   z-index: -1;
 }
-
 .overlay-menu {
   list-style: none;
   text-align: center;
