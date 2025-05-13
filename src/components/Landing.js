@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { ReactTyped } from "react-typed";
 import { Container, Row, Col } from "react-bootstrap";
 // adjust the path based on your file location
-//import CountDownTimer from './Countdowntimer';
+import CountDownTimer from './Countdowntimer.js';
 
 import { Link } from 'react-router-dom';
 
@@ -92,7 +92,7 @@ const Landing = () => {
               style={{ color: 'yellow',letterSpacing:'1.5px' }}
             />
           </motion.div>
-{/*  <CountDownTimer targetDate={new Date("2025-05-22T00:00:00")} className="countdown" />*/}
+ <CountDownTimer targetDate={new Date("2025-05-22T00:00:00")} className="countdown" />
         </div>
       </section>
     </div>
@@ -251,11 +251,11 @@ const Landing = () => {
   <div className="center-card">
     <img src="https://res.cloudinary.com/dy52wmqeb/image/upload/v1747083815/charactermob_wqnu1d.png" alt="Hero" />
   </div>
-{/* <div className="countdown-mobile">
+ <div className="countdown-mobile">
   <CountDownTimer
     targetDate={new Date("2025-05-22T00:00:00")}
   />
-</div>*/}
+</div>
 </section>
 
 </>
