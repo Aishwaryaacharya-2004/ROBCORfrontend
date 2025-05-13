@@ -92,12 +92,12 @@ const Register = () => {
   if (clicked) {
     return (
       <div style={{ display: iframe ? 'block' : 'none' }}>
-        <iframe
+       <iframe
           onLoad={() => setIframe(true)}
           width="100%"
           height="100%"
           style={{ border: 'none', minHeight: "100vh" }}
-          src="https://www.yepdesk.com/embed/buy-tickets/681e558ac9e77c0001e55031/private/t3t53lq2ip"
+          src="https://www.yepdesk.com/embed/buy-tickets/682338c4c9e77c0001f170ba/private/ukmvh2dqm3"
         />
       </div>
     );
