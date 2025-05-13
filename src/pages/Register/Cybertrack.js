@@ -96,7 +96,7 @@ const Register = () => {
           width="100%"
           height="100%"
           style={{ border: 'none', minHeight: "100vh" }}
-          src="https://www.yepdesk.com/embed/buy-tickets/681e558ac9e77c0001e55031/private/t3t53lq2ip"
+          src="https://www.yepdesk.com/embed/buy-tickets/68233da6c9e77c0001f177e1/private/ee2fbnk06p"
         />
       </div>
     );
