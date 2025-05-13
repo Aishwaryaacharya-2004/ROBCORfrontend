@@ -249,11 +249,17 @@ const Register = () => {
 
             <h4 className="mt-4">Event Rules:</h4>
             <div className="content">
-              <p>- 2 rounds: Debugging + Code Battle</p>
-              <p>- Round 1: Elimination based on bug fixes</p>
-              <p>- Round 2: Head-to-head code duel</p>
-              <p>- Laptops will be provided or use your own</p>
-              <p>- Decision of judges is final</p>
+               <p>- For the first round, a set of 30 questions on coding aptitude will be provided.</p>
+             <p>- Separate 1st round for 1st years and whoever comes first will get a consolation prize.</p>
+             <p>- Top 10 teams of 1st round will be selected.</p>
+             <p>- 2nd round will be organized on HackerRank.com</p>
+             <p>- There will be 4 programming questions</p>
+             <p>- All participants must report at the venue 30 minutes before the event's commencement.</p>
+             <p>- The participants Id card must be signed by the coordinator.</p>
+             <p>- No time extension will be provided.</p>
+             <p>- Timing will be used as tie breaker.</p>
+             <p>- Copy pasting of code will not be allowed.</p>
+             <p>- Browsing or opening any other tab will not be allowed.</p>
             </div>
 
             <div className="container-fluid mt-4">
