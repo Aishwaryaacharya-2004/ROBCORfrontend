@@ -6,7 +6,7 @@ import projectSymposium from '../../assets/compressed/projectSymposium.jpg';
 import rulebook from '../../assets/rulebook.pdf';
 import character4 from '../../assets/compressed/character4.jpg';
 import backgroundImg from '../../assets/demo.jpg';
-import Loading from '../../components/Landing.js';
+import Loading from '../../components/Loading.js';
 
 const eventRules = {
   "Binary Duels": { min: 1, max: 2 },
