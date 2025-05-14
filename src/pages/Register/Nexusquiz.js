@@ -22,6 +22,7 @@ export const eventRules = {
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phoneRegex = /^[6-9]\d{9}$/;
 const usnRegex = /^[1-9][A-Z]{2}\d{2}[A-Z]{2}\d{3}$/i;
+
 const Register = () => {
   const [showRegistrationForm, setShowRegistrationForm] = useState(false);
   const [clicked, setClicked] = useState(false);
@@ -34,6 +35,7 @@ const Register = () => {
   const [registrationClosed, setRegistrationClosed] = useState(false); // toggle manually if needed
   const [animateImage, setAnimateImage] = useState(false);
   const [validForm, setValidForm] = useState(false);
+  
 
   
   useEffect(() => {
@@ -46,15 +48,15 @@ const Register = () => {
   }, [selectedEvent]);
 
   useEffect(() => {
-    const isValid = formData.every(
-      (p) =>
-        p.name.trim() !== "" &&
-        emailRegex.test(p.email) &&
-        phoneRegex.test(p.phone) &&
-        usnRegex.test(p.usn)
-    );
-    setValidForm(isValid);
-  }, [formData]);
+          const isValid = formData.every(
+            (p) =>
+              p.name.trim() !== "" &&
+              emailRegex.test(p.email) &&
+              phoneRegex.test(p.phone) &&
+              usnRegex.test(p.usn)
+          );
+          setValidForm(isValid);
+        }, [formData]);
 
   const handleChange = (index, e) => {
     const newFormData = [...formData];
@@ -202,7 +204,8 @@ const Register = () => {
                                   name="email"
                                   value={participant.email}
                                   onChange={(e) => handleChange(index, e)}
-                                  required
+                                   isInvalid={participant.email && !emailRegex.test(participant.email)}
+                          required
                                 />
                               </Form.Group>
                               <Form.Group className="mb-2">
@@ -211,8 +214,9 @@ const Register = () => {
                                   className="arc-input"
                                   type="text"
                                   name="usn"
-                                  value={participant.usn}
+                                  value={participant.usn&&!usnRegex.test(participant.usn)}
                                   onChange={(e) => handleChange(index, e)}
+                                  isInvalid={participant.usn && !usnRegex.test(participant.usn)}
                                   required
                                 />
                               </Form.Group>
@@ -224,6 +228,7 @@ const Register = () => {
                                   name="phone"
                                   value={participant.phone}
                                   onChange={(e) => handleChange(index, e)}
+                                   isInvalid={participant.phone && !phoneRegex.test(participant.phone)}
                                   required
                                 />
                               </Form.Group>
@@ -280,10 +285,10 @@ const Register = () => {
              
                   <div className="col-md-6">
                      <h2 className="mt-4">{selectedEvent}</h2>
-                     <p className="cyber-head" ><strong >Timing:</strong> 10:30 AM</p>
-                     <p className="cyber-head"><strong >Venue:</strong> TEL 101</p>
+                     <p className="cyber-head" ><strong >Timing:</strong> 12:45 PM</p>
+                     <p className="cyber-head"><strong >Venue:</strong> Online</p>
                      <p className="cyber-head"><strong >Team Size:</strong> {eventRules[selectedEvent].min} - {eventRules[selectedEvent].max}</p>
-                     <p className="cyber-head"><strong >Fee:</strong> ₹100</p>
+                     <p className="cyber-head"><strong >Fee:</strong> ₹50</p>
              
   <h4 className="mt-4">Event Rules:</h4>
   <div className="content">
@@ -308,7 +313,7 @@ const Register = () => {
                    RULE BOOK
                  </a>
                  <button className="cyber-button" onClick={handleProceedClick}>
-                   PROCEED
+                   REGISTER
                  </button>
                </div>
              </div>
