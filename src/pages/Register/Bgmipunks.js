@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Form, Button, Alert, Spinner } from "react-bootstrap";
 import axios from "axios";
 import './register.css';
-//import starlink from '../../assets/compressed/starlink.jpg';
+import starlink from '../../assets/compressed/starlink.jpg';
 import rulebook from '../../assets/rulebook.pdf';
 import character7 from '../../assets/compressed/charater7.jpg';
 import backgroundImg from '../../assets/demo.jpg';
@@ -18,6 +18,7 @@ export const eventRules = {
   "Neon Run":{min:1,max:4},
   "BGMI Punks":{min:1,max:4},
 };
+
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phoneRegex = /^[6-9]\d{9}$/;
 const usnRegex = /^[1-9][A-Z]{2}\d{2}[A-Z]{2}\d{3}$/i;
@@ -35,7 +36,8 @@ const Register = () => {
   const [registrationClosed, setRegistrationClosed] = useState(false); // toggle manually if needed
   const [animateImage, setAnimateImage] = useState(false);
   const [validForm, setValidForm] = useState(false);
-
+    
+  
 
   
   useEffect(() => {
@@ -47,16 +49,17 @@ const Register = () => {
     setFormData(Array.from({ length: min }, () => ({ name: "", email: "", usn: "", phone: "" })));
   }, [selectedEvent]);
 
-  useEffect(() => {
-    const isValid = formData.every(
-      (p) =>
-        p.name.trim() !== "" &&
-        emailRegex.test(p.email) &&
-        phoneRegex.test(p.phone) &&
-        usnRegex.test(p.usn)
-    );
-    setValidForm(isValid);
-  }, [formData]);
+   useEffect(() => {
+      const isValid = formData.every(
+        (p) =>
+          p.name.trim() !== "" &&
+          emailRegex.test(p.email) &&
+          phoneRegex.test(p.phone) &&
+          usnRegex.test(p.usn)
+      );
+      setValidForm(isValid);
+    }, [formData]);
+ 
 
   const handleChange = (index, e) => {
     const newFormData = [...formData];
@@ -109,7 +112,7 @@ const Register = () => {
   if (clicked) {
     return (
       <div style={{ display: iframe ? 'block' : 'none' }}>
-          <iframe
+        <iframe
           onLoad={() => setIframe(true)}
           width="100%"s
           height="100%"
@@ -204,6 +207,8 @@ const Register = () => {
                             name="email"
                             value={participant.email}
                             onChange={(e) => handleChange(index, e)}
+                            isInvalid={participant.email && !emailRegex.test(participant.email)}
+                          
                             required
                           />
                         </Form.Group>
@@ -215,6 +220,8 @@ const Register = () => {
                             name="usn"
                             value={participant.usn}
                             onChange={(e) => handleChange(index, e)}
+                            isInvalid={participant.usn && !usnRegex.test(participant.usn)}
+                          
                             required
                           />
                         </Form.Group>
@@ -226,6 +233,7 @@ const Register = () => {
                             name="phone"
                             value={participant.phone}
                             onChange={(e) => handleChange(index, e)}
+                             isInvalid={participant.phone && !phoneRegex.test(participant.phone)}
                             required
                           />
                         </Form.Group>
@@ -312,7 +320,7 @@ Emergency Pickup is not allowed during matches.</p>
                            RULE BOOK
                          </a>
                          <button className="cyber-button" onClick={handleProceedClick}>
-                           PROCEED
+                           REGISTER
                          </button>
                        </div>
                      </div>
