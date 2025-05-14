@@ -295,64 +295,64 @@ const Landing = () => {
       title: "Cyber Track",
       img: "https://res.cloudinary.com/dfli7mciv/image/upload/v1747151257/droidrace_dojqd3.jpg",
       about: "Race your innovation, follow the line, and conquer the track!",
-      date: "12:00 PM",
-      venue: "Lab 203",
+      date: "10:30 AM",
+      venue: "Indoor Stadium",
       route: "/register/cybertrack"
     },
     {
       title: "Cyber Kick",
        img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151256/droidkick_clmrpl.jpg",
       about: "Kick, score, and rule the field with your robotic soccer skills!",
-      date: "11:00 AM",
-      venue: "Room B-4",
+      date: "10:30 AM",
+      venue: "Canteen 1st floor",
       route: "/register/cyberkick"
     },
     {
       title: "Project Conclave",
        img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151974/WhatsApp_Image_2025-05-13_at_8.53.51_PM_uhxjfo.jpg",
       about: "Showcase your brilliance, innovate, and lead the future at Project Conclave!",
-      date: "Starts 6 PM",
-      venue: "Cyber Lab",
+      date: "10:30 AM",
+      venue: "Faraday Seminar Hall",
       route: "/register/projectconclave"
     },
     {
       title: "Nexus Quiz",
        img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151258/quiz_xsdgoh.jpg",
       about: "Test your knowledge, challenge your mind, and emerge as the ultimate quiz champion!",
-      date: "2:00 PM",
-      venue: "Hall A",
+      date: "12:45 PM",
+      venue: "Online Mode",
       route: "/register/nexusquiz"
     },
     {
       title: "Neon Run",
        img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151259/starcrawl_jixzio.jpg",
       about: "Conquer the toughest terrains, endure the rugged race, and emerge victorious!",
-      date: "4:00 PM",
-      venue: "Mech Arena",
+      date: "10:30 AM",
+      venue: "Outdoor Stadium",
       route: "/register/neonrun"
     },
     {
       title: "Neon Maze",
       img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151259/starlink_pxek8d.jpg",
       about: "Navigate the glow, command with Bluetooth, and master the Neon Maze!",
-      date: "3:00 PM",
-      venue: "Room D-2",
+      date: "10:30 AM",
+      venue: "Canteen 1st floor",
       route: "/register/neonmaze"
     },
     {
       title: "Arduino Forge",
       img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151259/projectSymposium_o3xtwd.jpg",
       about: "Debug, design, and dominate the circuit at Arduino Forge!",
-      date: "3:00 PM",
-      venue: "Room D-2",
+      date: "10:30 AM",
+      venue: "Media center",
       route: "/register/arduinoforge"
     },
     {
       title: "BGMI Punks",
      img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151972/WhatsApp_Image_2025-05-13_at_8.09.37_PM_k7kotp.jpg",
       about: "Drop in, gear up, and battle your way to glory in BGMI Punks!",
-      date: "3:00 PM",
-      venue: "Room D-2",
+      date: "10:30 AM",
+      venue: "Online",
       route: "/register/bgmipunks"
     }
   ].map((event, index) => (
