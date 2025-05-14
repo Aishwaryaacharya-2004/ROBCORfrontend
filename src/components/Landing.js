@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./Landing.css";
+//import backgroundImg from '../assets/demo.jpg';
 import MouseParticles from "react-mouse-particles";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from 'framer-motion';
 import { ReactTyped } from "react-typed";
 import { Container, Row, Col } from "react-bootstrap";
-// adjust the path based on your file location
-import CountDownTimer from './Countdowntimer.js';
-
 import { Link } from 'react-router-dom';
+import CountDownTimer from './Countdowntimer';  // adjust the path based on your file structure
+
+
+
 
 
 import Slider from "react-slick";
+
 
 
 
@@ -54,7 +57,7 @@ const Landing = () => {
       className="landing-top"
       style={{
         height: '70vh',
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), URL("https://res.cloudinary.com/dfli7mciv/image/upload/v1747152354/demo_ihdk9v.jpg")`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://res.cloudinary.com/dfli7mciv/image/upload/v1747152354/demo_ihdk9v.jpg")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -86,13 +89,13 @@ const Landing = () => {
           >
             <ReactTyped
               strings={["May 22nd"]}
-              typeSpeed={10}
-              backSpeed={30}
+              typeSpeed={80}
+              backSpeed={40}
               loop
-              style={{ color: 'yellow',letterSpacing:'1.5px' }}
+              style={{ color: 'yellow',letterSpacing:'3px' }}
             />
           </motion.div>
- <CountDownTimer targetDate={new Date("2025-05-22T00:00:00")} className="countdown" />
+          <CountDownTimer targetDate={new Date("2025-05-22T00:00:00")} className="countdown" />
         </div>
       </section>
     </div>
@@ -230,32 +233,39 @@ const Landing = () => {
 
   {/* Hero Text in Yellow Section */}
   <motion.div
-    className="hero-text-mobile"
-    initial={{ x: -100, opacity: 0 }}
-    animate={{ x: 0, opacity: 1 }}
-    transition={{ delay: 0.2, duration: 0.9 }}
-  >
-    <h1>ROBOCOR'25</h1>
-    <h4>Unleash the bots, light up the circuit</h4>
-    <div className="typed-mobile">
-      <ReactTyped
-        strings={["May 22nd"]}
-        typeSpeed={30}
-        backSpeed={50}
-        loop
-      />
-    </div>
-  </motion.div>
+  className="hero-text-mobile"
+  initial={{ x: -100, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  transition={{ delay: 0.2, duration: 0.9 }}
+>
+  <h1>ROBOCOR  '25</h1>
+  <h4>Unleash the bots, light up the circuit</h4>
+
+  <div className="typed-mobile">
+    <ReactTyped
+      strings={["May 22nd"]}
+      typeSpeed={80}
+      backSpeed={40}
+      loop
+    />
+  </div>
+
+  
+</motion.div>
+
+  
 
   {/* Centered Character Image Across Yellow/Black Border */}
   <div className="center-card">
     <img src="https://res.cloudinary.com/dy52wmqeb/image/upload/v1747083815/charactermob_wqnu1d.png" alt="Hero" />
   </div>
- <div className="countdown-mobile">
+  <div className="countdown-mobile">
   <CountDownTimer
     targetDate={new Date("2025-05-22T00:00:00")}
   />
 </div>
+
+ 
 </section>
 
 </>
@@ -285,7 +295,7 @@ const Landing = () => {
   {[
     {
       title: "Binary Duels",
-     img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151250/bytewars_kuvbgk.jpg",
+      img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151250/bytewars_kuvbgk.jpg",
       about: "Competitive coding battle for sharp minds.",
       date: "10:30 AM",
       venue: "TEL 101",
@@ -295,37 +305,37 @@ const Landing = () => {
       title: "Cyber Track",
       img: "https://res.cloudinary.com/dfli7mciv/image/upload/v1747151257/droidrace_dojqd3.jpg",
       about: "Race your innovation, follow the line, and conquer the track!",
-      date: "10:30 AM",
+      date: "10:30 PM",
       venue: "Indoor Stadium",
       route: "/register/cybertrack"
     },
     {
       title: "Cyber Kick",
-       img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151256/droidkick_clmrpl.jpg",
+      img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151256/droidkick_clmrpl.jpg",
       about: "Kick, score, and rule the field with your robotic soccer skills!",
-      date: "10:30 AM",
-      venue: "Canteen 1st floor",
+      date: "10;30 AM",
+      venue: "Canteen 1st Floor",
       route: "/register/cyberkick"
     },
     {
       title: "Project Conclave",
-       img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151974/WhatsApp_Image_2025-05-13_at_8.53.51_PM_uhxjfo.jpg",
+      img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151974/WhatsApp_Image_2025-05-13_at_8.53.51_PM_uhxjfo.jpg",
       about: "Showcase your brilliance, innovate, and lead the future at Project Conclave!",
       date: "10:30 AM",
-      venue: "Faraday Seminar Hall",
+      venue: "Faraday seminar hall",
       route: "/register/projectconclave"
     },
     {
       title: "Nexus Quiz",
-       img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151258/quiz_xsdgoh.jpg",
+      img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151258/quiz_xsdgoh.jpg",
       about: "Test your knowledge, challenge your mind, and emerge as the ultimate quiz champion!",
       date: "12:45 PM",
-      venue: "Online Mode",
+      venue: "Online",
       route: "/register/nexusquiz"
     },
     {
       title: "Neon Run",
-       img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151259/starcrawl_jixzio.jpg",
+      img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151259/starcrawl_jixzio.jpg",
       about: "Conquer the toughest terrains, endure the rugged race, and emerge victorious!",
       date: "10:30 AM",
       venue: "Outdoor Stadium",
@@ -336,7 +346,7 @@ const Landing = () => {
       img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151259/starlink_pxek8d.jpg",
       about: "Navigate the glow, command with Bluetooth, and master the Neon Maze!",
       date: "10:30 AM",
-      venue: "Canteen 1st floor",
+      venue: "Canteen 1st Floor",
       route: "/register/neonmaze"
     },
     {
@@ -349,7 +359,7 @@ const Landing = () => {
     },
     {
       title: "BGMI Punks",
-     img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151972/WhatsApp_Image_2025-05-13_at_8.09.37_PM_k7kotp.jpg",
+      img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151972/WhatsApp_Image_2025-05-13_at_8.09.37_PM_k7kotp.jpg",
       about: "Drop in, gear up, and battle your way to glory in BGMI Punks!",
       date: "10:30 AM",
       venue: "Online",
@@ -370,6 +380,7 @@ const Landing = () => {
          <p className="event-info"><strong>Venue -</strong> {event.venue}</p>
 
           <Link to={event.route} className="cyber-button">Register</Link>
+
         </div>
       </div>
     </div>
@@ -404,7 +415,7 @@ const Landing = () => {
     <div className="row align-items-center">
       <div className="col-md-6 mb-4 mb-md-0">
         <img
-   src="https://res.cloudinary.com/dfli7mciv/image/upload/v1747151258/IMAGE1_hpqx0a.jpg"
+  src="https://res.cloudinary.com/dfli7mciv/image/upload/v1747151258/IMAGE1_hpqx0a.jpg"
   alt="ROBOCOR Robotics Competition"
   className="img-fluid rounded shadow"
   style={{
@@ -463,7 +474,7 @@ const Landing = () => {
     },
   ]}
 >
- {["https://res.cloudinary.com/dfli7mciv/image/upload/v1747152473/sponsor6_jqeh6g.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152473/sponsor4_bfyjdw.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152474/sponsor7_k0wnbt.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152473/sponsor5_s7u5m1.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152472/sponsor3_tri1am.png","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152472/sponsor2_vb6wlb.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152471/sponsor1_ytnv1k.png"].map((sponsor, index) => (
+  {["https://res.cloudinary.com/dfli7mciv/image/upload/v1747152473/sponsor6_jqeh6g.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152473/sponsor4_bfyjdw.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152474/sponsor7_k0wnbt.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152473/sponsor5_s7u5m1.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152472/sponsor3_tri1am.png","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152472/sponsor2_vb6wlb.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152471/sponsor1_ytnv1k.png"].map((sponsor, index) => (
     <div key={index} className="px-3">
       <div className="p-3 bg-dark rounded shadow sponsor-carousel-card">
         <img
