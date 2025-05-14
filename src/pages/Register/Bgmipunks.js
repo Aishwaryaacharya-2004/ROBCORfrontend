@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Form, Button, Alert, Spinner } from "react-bootstrap";
 import axios from "axios";
 import './register.css';
-import starlink from '../../assets/compressed/starlink.jpg';
+//import starlink from '../../assets/compressed/starlink.jpg';
 import rulebook from '../../assets/rulebook.pdf';
 import character7 from '../../assets/compressed/charater7.jpg';
 import backgroundImg from '../../assets/demo.jpg';
