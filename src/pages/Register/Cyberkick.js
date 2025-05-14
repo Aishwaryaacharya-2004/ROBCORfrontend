@@ -46,15 +46,15 @@ const Register = () => {
     setFormData(Array.from({ length: min }, () => ({ name: "", email: "", usn: "", phone: "" })));
   }, [selectedEvent]);
    useEffect(() => {
-    const isValid = formData.every(
-      (p) =>
-        p.name.trim() !== "" &&
-        emailRegex.test(p.email) &&
-        phoneRegex.test(p.phone) &&
-        usnRegex.test(p.usn)
-    );
-    setValidForm(isValid);
-  }, [formData]);
+      const isValid = formData.every(
+        (p) =>
+          p.name.trim() !== "" &&
+          emailRegex.test(p.email) &&
+          phoneRegex.test(p.phone) &&
+          usnRegex.test(p.usn)
+      );
+      setValidForm(isValid);
+    }, [formData]);
 
   const handleChange = (index, e) => {
     const newFormData = [...formData];
@@ -107,7 +107,7 @@ const Register = () => {
   if (clicked) {
     return (
       <div style={{ display: iframe ? 'block' : 'none' }}>
-       <iframe
+        <iframe
           onLoad={() => setIframe(true)}
           width="100%"
           height="100%"
@@ -202,6 +202,8 @@ const Register = () => {
                                   name="email"
                                   value={participant.email}
                                   onChange={(e) => handleChange(index, e)}
+                                   isInvalid={participant.email && !emailRegex.test(participant.email)}
+                          
                                   required
                                 />
                               </Form.Group>
@@ -211,8 +213,9 @@ const Register = () => {
                                   className="arc-input"
                                   type="text"
                                   name="usn"
-                                  value={participant.usn}
+                                  value={participant.usn&&!usnRegex.test(participant.usn)}
                                   onChange={(e) => handleChange(index, e)}
+                                  isInvalid={participant.usn && !usnRegex.test(participant.usn)}
                                   required
                                 />
                               </Form.Group>
@@ -224,6 +227,7 @@ const Register = () => {
                                   name="phone"
                                   value={participant.phone}
                                   onChange={(e) => handleChange(index, e)}
+                                   isInvalid={participant.phone && !phoneRegex.test(participant.phone)}
                                   required
                                 />
                               </Form.Group>
@@ -286,7 +290,7 @@ const Register = () => {
          <div className="col-md-6">
            <h2 className="mt-4">{selectedEvent}</h2>
            <p className="cyber-head" ><strong >Timing:</strong> 10:30 AM</p>
-           <p className="cyber-head"><strong >Venue:</strong> Canteen 1st floor</p>
+           <p className="cyber-head"><strong >Venue:</strong> Canteen 1st Floor</p>
            <p className="cyber-head"><strong >Team Size:</strong> {eventRules[selectedEvent].min} - {eventRules[selectedEvent].max}</p>
            <p className="cyber-head"><strong >Fee:</strong> ₹400</p>
    
