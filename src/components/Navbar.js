@@ -70,7 +70,9 @@ const Navbar = () => {
       {menuOpen && (
         <div
           className="overlay"
-          style={{ backgroundImage: `url("https://res.cloudinary.com/dfli7mciv/image/upload/v1747155680/image_w4iog5.jpg")` }}
+          style={{ backgroundImage: `url("https://res.cloudinary.com/dfli7mciv/image/upload/v1747155680/image_w4iog5.jpg")`, backgroundSize: 'auto', // Prevent zooming or stretching
+      backgroundPosition: 'center', // Center the image
+      backgroundRepeat: 'no-repeat', }}
         >
           <div>
             <ul className="overlay-menu">
