@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 import { ReactTyped } from "react-typed";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import CountDownTimer from './Countdowntimer';  // adjust the path based on your file structure
+import CountDownTimer from './Countdowntimer.js';  // adjust the path based on your file structure
 
 
 
