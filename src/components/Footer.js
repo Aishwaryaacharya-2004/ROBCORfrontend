@@ -80,7 +80,6 @@ const Footer = () => (
               <div className="d-flex align-items-center justify-content-between">
                 <div>
                   <div style={{ fontSize: '1.1rem', fontFamily: 'Popins' }} className="gradient-text">Jatin Sharma</div>
-                  <div>Chairman</div>
                 </div>
                 <a
                   href="https://wa.me/+918104882160"
@@ -104,7 +103,7 @@ const Footer = () => (
               <div className="d-flex align-items-center justify-content-between">
                 <div>
                   <div style={{ fontSize: '1.1rem', fontFamily: 'Popins' }} className="gradient-text">Ujjwal Singh</div>
-                  <div>Vice Chairman</div>
+    
                 </div>
                 <a
                   href="https://wa.me/+919871324902"
