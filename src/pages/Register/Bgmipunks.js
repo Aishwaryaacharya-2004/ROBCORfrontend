@@ -16,7 +16,7 @@ export const eventRules = {
   "Cyber Kick": { min: 1, max: 4 },
   "Nexus Quiz":{min:1,max:1},
   "Neon Run":{min:1,max:4},
-  "BGMI Punks":{min:1,max:4},
+  "BGMI Punks":{min:2,max:4},
 };
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -81,7 +81,7 @@ const Register = () => {
     setSuccess(null);
 
     try {
-      await axios.post("https://robcorbackend-5.onrender.com/api/register", {
+      await axios.post("http://localhost:5000/api/register", {
         event: selectedEvent,
         members: formData,
       }, { withCredentials: true });
@@ -237,6 +237,17 @@ const Register = () => {
                             required
                           />
                         </Form.Group>
+                         <Form.Group className="mb-2">
+                          <Form.Label>BGMI ID</Form.Label>
+                          <Form.Control
+                            className="arc-input"
+                            type="text"
+                            name="BGMI ID"
+                            value={participant.bgmiid}
+                            onChange={(e) => handleChange(index, e)}
+                            required
+                          />
+                        </Form.Group>
                       </div>
                     ))}
       
@@ -252,7 +263,7 @@ const Register = () => {
                     <Button
                       type="submit"
                       className="cyber-button mb-3 w-100"
-                      disabled={loading || !validForm}
+                      disabled={loading}
                     >
                       {loading ? <Spinner animation="border" size="sm" /> : 'Submit & Pay'}
                     </Button>
