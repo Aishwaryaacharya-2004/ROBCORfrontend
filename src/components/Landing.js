@@ -474,7 +474,7 @@ const Landing = () => {
     },
   ]}
 >
-  {["https://res.cloudinary.com/dfli7mciv/image/upload/v1747152473/sponsor6_jqeh6g.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152473/sponsor4_bfyjdw.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152474/sponsor7_k0wnbt.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152473/sponsor5_s7u5m1.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747220669/Screenshot_2025-05-14_163335_demayi.png","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152472/sponsor2_vb6wlb.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152471/sponsor1_ytnv1k.png"].map((sponsor, index) => (
+  {["https://res.cloudinary.com/dfli7mciv/image/upload/v1747152473/sponsor6_jqeh6g.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152473/sponsor4_bfyjdw.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152474/sponsor7_k0wnbt.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152473/sponsor5_s7u5m1.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747220669/Screenshot_2025-05-14_163335_demayi.png","https://res.cloudinary.com/dfli7mciv/image/upload/v1747152472/sponsor2_vb6wlb.jpg","https://res.cloudinary.com/dfli7mciv/image/upload/v1747220972/images_xrsdnn.jpg"].map((sponsor, index) => (
     <div key={index} className="px-3">
       <div className="p-3 bg-dark rounded shadow sponsor-carousel-card">
         <img
