@@ -277,7 +277,7 @@ const Register = () => {
             <div className="cyber-content">
                <div className="cyber-card row">
                   <div className="col-md-6 text-center mb-3 mb-md-0">
-                      <img src={starlink} className="event-image" alt="bytewars" />
+                      <img src="https://res.cloudinary.com/dfli7mciv/image/upload/v1747151972/WhatsApp_Image_2025-05-13_at_8.09.37_PM_k7kotp.jpg" className="event-image" alt="bytewars" />
                           </div>
                      
                           <div className="col-md-6">
