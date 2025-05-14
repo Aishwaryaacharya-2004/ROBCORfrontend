@@ -247,7 +247,7 @@ const Register = () => {
                           <Button
                             type="submit"
                             className="cyber-button mb-3 w-100"
-                            disabled={loading}
+                            disabled={loading || !validForm}
                           >
                             {loading ? <Spinner animation="border" size="sm" /> : 'Submit & Pay'}
                           </Button>
