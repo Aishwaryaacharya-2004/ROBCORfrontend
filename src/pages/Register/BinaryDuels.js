@@ -242,14 +242,14 @@ const Register = () => {
 
           <div className="col-md-6">
             <h2 className="mt-4">{selectedEvent}</h2>
-            <p className="cyber-head"><strong>Timing:</strong> 11:00 AM</p>
-            <p className="cyber-head"><strong>Venue:</strong> CS LAB 1</p>
+            <p className="cyber-head"><strong>Timing:</strong> 10:30 AM</p>
+            <p className="cyber-head"><strong>Venue:</strong> TEL 101 1</p>
             <p className="cyber-head"><strong>Team Size:</strong> {eventRules[selectedEvent].min} - {eventRules[selectedEvent].max}</p>
             <p className="cyber-head"><strong>Fee:</strong> ₹100</p>
 
             <h4 className="mt-4">Event Rules:</h4>
             <div className="content">
-               <p>- For the first round, a set of 30 questions on coding aptitude will be provided.</p>
+               <p>- For the first round, a set of 40 questions on coding aptitude will be provided.</p>
              <p>- Separate 1st round for 1st years and whoever comes first will get a consolation prize.</p>
              <p>- Top 10 teams of 1st round will be selected.</p>
              <p>- 2nd round will be organized on HackerRank.com</p>
