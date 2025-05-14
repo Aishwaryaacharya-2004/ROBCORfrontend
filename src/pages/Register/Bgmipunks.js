@@ -289,15 +289,16 @@ const Register = () => {
                      
           <h4 className="mt-4">Event Rules:</h4>
           <div className="content">
-    <p>- The arena will consist of the following terrains: Pebble, Sand, Water, Bumps, Wedges and Other obstacles.</p>
- <p>- The width of the track will be 65cm </p>
-<p>- If the bot goes out of the track, penalty time will be added to the final track completion time</p>
-<p>- The bot should fit in a box of dimensions 30cm x 30cm x 30cm</p>
-<p>- The power supply used can be a maximum of 12 Volts which can either be on board or off board. IC Engines are not allowed</p>
-<p>- The event will be carried out in two rounds</p>
+    <p>- All players must have an active BGMI account in good standing and link it to their profile.</p>
+ <p>- All players must install the latest version of BGMI. Ensure all updates are completed before the tournament starts.</p>
+<p>- Teams are responsible for their own devices and connections. Matches will not be rescheduled due to technical problems on your end.</p>
+<p>- The use of third-party programs that alter gameplay, visuals, or files in any way is strictly prohibited.
+Intentional use of bugs, glitches, or game errors is forbidden. Any team caught doing so will be disqualified and banned from future events.
+Emergency Pickup is not allowed during matches.</p>
+<p>- The management reserves the right to disqualify any team for violations of the rules or for any behavior deemed inappropriate or unfair.</p>
+<p>- The decision of the game master is final and to challenge any decisions participants need to provide Screenshot within 10 mins after the match is over</p>
 <p>- In qualifying round, the bot has to pass through maximum number of checkpoints in a given time</p>
-<p>- Only 2 members of a team are allowed to control the bot during the race</p>
-<p>- The bot will be disqualified if any part fails or falls off in the arena and is unable to continue</p>
+<p>- For further details refer the rulebook</p>
 
     
     </div>
