@@ -6,7 +6,7 @@ import projectSymposium from '../../assets/compressed/projectSymposium.jpg';
 import rulebook from '../../assets/rulebook.pdf';
 import character4 from '../../assets/compressed/character4.jpg';
 import backgroundImg from '../../assets/demo.jpg';
-import Loading from '../../components/Loading.js';
+import Loading from '../../components/Landing.js';
 
 const eventRules = {
   "Binary Duels": { min: 1, max: 2 },
@@ -79,7 +79,7 @@ const Register = () => {
     setSuccess(null);
 
     try {
-      await axios.post("https://robcorbackend-5.onrender.com/api/register", {
+      await axios.post("http://localhost:5000/api/register", {
         event: selectedEvent,
         members: formData,
       }, { withCredentials: true });
