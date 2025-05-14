@@ -75,7 +75,7 @@ const Landing = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.9 }}
           >
-            <h1 className="fw-bold display-1 mb-2" style={{ color: 'yellow', letterSpacing: '2px' }}>ROBOCOR'25</h1>
+            <h1 className="fw-bold display-1 mb-2" style={{ color: 'yellow', letterSpacing: '2px' }}>ROBOCOR '25</h1>
             <h4 className="fw-semibold mb-4" style={{ color: 'yellow', letterSpacing: '1px' }}>Unleash the bots,light up the circuit</h4>
           </motion.div>
           <motion.div
@@ -86,8 +86,8 @@ const Landing = () => {
           >
             <ReactTyped
               strings={["May 22nd"]}
-              typeSpeed={30}
-              backSpeed={50}
+              typeSpeed={10}
+              backSpeed={30}
               loop
               style={{ color: 'yellow',letterSpacing:'1.5px' }}
             />
