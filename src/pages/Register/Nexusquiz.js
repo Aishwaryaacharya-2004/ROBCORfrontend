@@ -214,7 +214,7 @@ const Register = () => {
                                   className="arc-input"
                                   type="text"
                                   name="usn"
-                                  value={participant.usn&&!usnRegex.test(participant.usn)}
+                                  value={participant.usn}
                                   onChange={(e) => handleChange(index, e)}
                                   isInvalid={participant.usn && !usnRegex.test(participant.usn)}
                                   required
