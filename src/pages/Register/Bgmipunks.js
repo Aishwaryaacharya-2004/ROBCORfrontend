@@ -27,7 +27,7 @@ const Register = () => {
   const [showRegistrationForm, setShowRegistrationForm] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [iframe, setIframe] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState("Neon Maze"); // default for demo
+  const [selectedEvent, setSelectedEvent] = useState("BGMI Punks"); // default for demo
   const [formData, setFormData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
