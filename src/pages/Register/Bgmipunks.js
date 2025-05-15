@@ -316,7 +316,6 @@ Intentional use of bugs, glitches, or game errors is forbidden. Any team caught 
 Emergency Pickup is not allowed during matches.</p>
 <p>- The management reserves the right to disqualify any team for violations of the rules or for any behavior deemed inappropriate or unfair.</p>
 <p>- The decision of the game master is final and to challenge any decisions participants need to provide Screenshot within 10 mins after the match is over</p>
-<p>- In qualifying round, the bot has to pass through maximum number of checkpoints in a given time</p>
 <p>- For further details refer the rulebook</p>
 
     
