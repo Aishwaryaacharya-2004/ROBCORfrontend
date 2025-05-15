@@ -102,7 +102,7 @@ const Footer = () => (
             <li className="mb-2">
               <div className="d-flex align-items-center justify-content-between">
                 <div>
-                  <div style={{ fontSize: '1.1rem', fontFamily: 'Popins' }} className="gradient-text">Ujjwal Singh</div>
+                  <div style={{ fontSize: '1.1rem', fontFamily: 'Popins' }} className="gradient-text">Ujjawal Singh</div>
     
                 </div>
                 <a
