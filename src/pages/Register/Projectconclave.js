@@ -4,6 +4,7 @@ import axios from "axios";
 import './register.css';
 import projectSymposium from '../../assets/compressed/projectSymposium.jpg';
 import rulebook from '../../assets/rulebook.pdf';
+import ppt from '../../assets/ProjectSymposium_ppt_template.pptx'
 import character4 from '../../assets/compressed/character4.jpg';
 import backgroundImg from '../../assets/demo.jpg';
 
@@ -79,7 +80,7 @@ const Register = () => {
     setSuccess(null);
 
     try {
-      await axios.post("https://robcorbackend-5.onrender.com/api/register", {
+      await axios.post("http://localhost:5000/api/register", {
         event: selectedEvent,
         members: formData,
       }, { withCredentials: true });
@@ -228,9 +229,8 @@ const Register = () => {
                                         className="arc-input"
                                         type="text"
                                         name="phone"
-                                        value={participant.phone}
+                                        value={participant.phone&&!phoneRegex.test(participant.phone)}
                                         onChange={(e) => handleChange(index, e)}
-                                         isInvalid={participant.phone && !phoneRegex.test(participant.phone)}
                                         required
                                       />
                                     </Form.Group>
@@ -249,7 +249,7 @@ const Register = () => {
                                 <Button
                                   type="submit"
                                   className="cyber-button mb-3 w-100"
-                                 disabled={loading || !validForm}
+                                  disabled={loading}
                                 >
                                   {loading ? <Spinner animation="border" size="sm" /> : 'Submit & Pay'}
                                 </Button>
@@ -304,8 +304,9 @@ const Register = () => {
                <p>- Ideas related to robotics and new innovative technologies will help participants to gain bonus point.</p>
                <p>- Project related to any domain will be accepted</p>
                <p>- Judge’s decision will be final and binding to all</p>
-               <p>- Last date for abstract submission is 20th May,2025</p>
+               <p>- Last date for abstract submission is 7th May,2024</p>
                <p>- Soft copy of the abstract should be mailed to <a href="mailto:corsit@sit.ac.in">corsit@sit.ac.in</a></p>
+                
                   </div>
           
                   <div className="container-fluid mt-4">
@@ -313,6 +314,9 @@ const Register = () => {
             <div className="container text-center mt-4">
             <div className="container mt-4">
             <div className="d-flex flex-column flex-sm-row justify-content-start align-items-center gap-3 ps-sm-4">
+               <a href={ppt} download className="cyber-button">
+                PPT Template
+              </a>
               <a href={rulebook} download className="cyber-button">
                 RULE BOOK
               </a>
