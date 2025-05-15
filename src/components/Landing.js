@@ -313,7 +313,7 @@ const Landing = () => {
       title: "Cyber Kick",
       img:"https://res.cloudinary.com/dfli7mciv/image/upload/v1747151256/droidkick_clmrpl.jpg",
       about: "Kick, score, and rule the field with your robotic soccer skills!",
-      date: "10;30 AM",
+      date: "10:30 AM",
       venue: "Canteen 1st Floor",
       route: "/register/cyberkick"
     },
