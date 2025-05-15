@@ -241,8 +241,9 @@ const Register = () => {
                                         className="arc-input"
                                         type="text"
                                         name="phone"
-                                        value={participant.phone&&!phoneRegex.test(participant.phone)}
+                                        value={participant.phone}
                                         onChange={(e) => handleChange(index, e)}
+                                         isInvalid={participant.phone && !phoneRegex.test(participant.phone)}
                                         required
                                       />
                                     </Form.Group>
