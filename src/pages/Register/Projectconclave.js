@@ -304,7 +304,7 @@ const Register = () => {
                <p>- Ideas related to robotics and new innovative technologies will help participants to gain bonus point.</p>
                <p>- Project related to any domain will be accepted</p>
                <p>- Judge’s decision will be final and binding to all</p>
-               <p>- Last date for abstract submission is 20th May,2024</p>
+               <p>- Last date for abstract submission is 20th May,2025</p>
                <p>- Soft copy of the abstract should be mailed to <a href="mailto:corsit@sit.ac.in">corsit@sit.ac.in</a></p>
                   </div>
           
