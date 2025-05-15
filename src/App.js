@@ -16,9 +16,17 @@ import Certificate from './pages/certificate/Certificate.js';
 import PaymentSuccess from './components/Paymentsucess.js';
 import NotFoundPage from './pages/Notfound.js';
 
+import ReactGA from 'react-ga4';
+
+ReactGA.initialize('G-HM7B4BL0YK'); 
+
+ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+
+
 
 const App = () => {
   const homeRef = useRef();
+  usePageTracking(); 
 
   return (
     <Router>
