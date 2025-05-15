@@ -6,6 +6,7 @@ import droidrace from '../../assets/compressed/droidrace.jpg';
 import rulebook from '../../assets/rulebook.pdf';
 import character3 from '../../assets/compressed/character3.jpg';
 import backgroundImg from '../../assets/demo.jpg';
+import Loading from '../../components/Loading.js';
 
 export const eventRules = {
   "Binary Duels": { min: 1, max: 2 },
@@ -36,7 +37,7 @@ const Register = () => {
   const [animateImage, setAnimateImage] = useState(false);
   const [validForm, setValidForm] = useState(false);
   const [iframeLoaded, setIframeLoaded] = useState(false);
-  import Loading from '../../components/Loading.js';
+  
   
   useEffect(() => {
     setAnimateImage(true);
