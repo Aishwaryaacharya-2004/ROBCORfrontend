@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Container, Form, Button, Alert, Spinner } from "react-bootstrap";
+import Loading from '../../components/Loading.js';
 import axios from "axios";
 import './register.css';
 import droidrace from '../../assets/compressed/droidrace.jpg';
 import rulebook from '../../assets/rulebook.pdf';
 import character3 from '../../assets/compressed/character3.jpg';
 import backgroundImg from '../../assets/demo.jpg';
-import Loading from '../../components/Loading.js';
 
 export const eventRules = {
   "Binary Duels": { min: 1, max: 2 },
