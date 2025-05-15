@@ -7,6 +7,8 @@ import rulebook from '../../assets/rulebook.pdf';
 import ppt from '../../assets/ProjectSymposium_ppt_template.pptx'
 import character4 from '../../assets/compressed/character4.jpg';
 import backgroundImg from '../../assets/demo.jpg';
+import Loading from '../../components/Loading.js';
+
 
 export const eventRules = {
   "Binary Duels": { min: 1, max: 2 },
@@ -37,6 +39,8 @@ const Register = () => {
   const [registrationClosed, setRegistrationClosed] = useState(false); // toggle manually if needed
   const [animateImage, setAnimateImage] = useState(false);
   const [validForm, setValidForm] = useState(false);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+
   
 
   
@@ -98,6 +102,10 @@ const Register = () => {
     setShowRegistrationForm(true);
   };
 
+  if (loading) {
+  return <Loading />;
+}
+
   if (registrationClosed) {
     return (
       <div className="cyber-bg d-flex flex-column justify-content-center align-items-center vh-100 text-center text-light">
@@ -110,15 +118,20 @@ const Register = () => {
   // Payment iframe page
   if (clicked) {
     return (
-      <div style={{ display: iframe ? 'block' : 'none' }}>
-        <iframe
-          onLoad={() => setIframe(true)}
-          width="100%"
-          height="100%"
-          style={{ border: 'none', minHeight: "100vh" }}
+      <>
+      {!iframeLoaded && <Loading />}
+      <iframe
+        onLoad={() => setIframeLoaded(true)}
+        width="100%"
+        height="100%"
+        style={{
+          display: iframeLoaded ? 'block' : 'none',
+          border: 'none',
+          minHeight: "100vh"
+        }}
           src="https://www.yepdesk.com/embed/buy-tickets/682339eec9e77c0001f173cc/private/5idjol6mga"
         />
-      </div>
+      </>
     );
   }
 
