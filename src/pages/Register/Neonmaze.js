@@ -6,6 +6,7 @@ import starlink from '../../assets/compressed/starlink.jpg';
 import rulebook from '../../assets/rulebook.pdf';
 import character7 from '../../assets/compressed/charater7.jpg';
 import backgroundImg from '../../assets/demo.jpg';
+import Loading from '../../components/Loading.js';
 
 export const eventRules = {
   "Binary Duels": { min: 1, max: 2 },
@@ -35,6 +36,8 @@ const Register = () => {
   const [registrationClosed, setRegistrationClosed] = useState(false);
   const [animateImage, setAnimateImage] = useState(false);
   const [validForm, setValidForm] = useState(false);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+
 
   useEffect(() => {
     setAnimateImage(true);
@@ -93,7 +96,9 @@ const Register = () => {
   const handleProceedClick = () => {
     setShowRegistrationForm(true);
   };
-
+ if (loading) {
+  return <Loading />;
+}
   if (registrationClosed) {
     return (
       <div className="cyber-bg d-flex flex-column justify-content-center align-items-center vh-100 text-center text-light">
@@ -105,15 +110,20 @@ const Register = () => {
 
   if (clicked) {
     return (
-      <div style={{ display: iframe ? 'block' : 'none' }}>
-        <iframe
-          onLoad={() => setIframe(true)}
-          width="100%"
-          height="100%"
-          style={{ border: 'none', minHeight: "100vh" }}
+      <>
+      {!iframeLoaded && <Loading />}
+      <iframe
+        onLoad={() => setIframeLoaded(true)}
+        width="100%"
+        height="100%"
+        style={{
+          display: iframeLoaded ? 'block' : 'none',
+          border: 'none',
+          minHeight: "100vh"
+        }}
          src="https://www.yepdesk.com/embed/buy-tickets/68233b8cc9e77c0001f17659/private/usiuikoahg"
         />
-      </div>
+      </>
     );
   }
 
