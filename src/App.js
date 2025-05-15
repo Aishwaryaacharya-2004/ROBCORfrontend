@@ -15,6 +15,7 @@ import RegisterBgmi from './pages/Register/Bgmipunks.js';
 import Certificate from './pages/certificate/Certificate.js';
 import PaymentSuccess from './components/Paymentsucess.js';
 import NotFoundPage from './pages/Notfound.js';
+import usePageTracking from './components/UsePageTracking.js';
 
 import ReactGA from 'react-ga4';
 
