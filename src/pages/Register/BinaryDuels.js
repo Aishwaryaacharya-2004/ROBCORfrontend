@@ -112,7 +112,7 @@ const Register = () => {
           width="100%"
           height="100%"
           style={{ border: 'none', minHeight: "100vh" }}
-           src="https://www.yepdesk.com/embed/binary-duels-coding-event-/private/41854nuhco"
+           src="https://www.yepdesk.com/embed/buy-tickets/68233671c9e77c0001f16969/private/41854nuhco"
         />
       </div>
     );
