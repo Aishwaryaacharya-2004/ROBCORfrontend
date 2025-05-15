@@ -308,7 +308,7 @@ const Register = () => {
            <h4 className="mt-4">Event Rules:</h4>
            <div className="content">
             <p>- The robot should fit inside a box of 30cm x 30cm x 30cm</p>
-               <p>- Robot should not exceed 8 kg</p>
+               <p>- Robot should not exceed 6 kg</p>
                <p>- The robot can be wired, wireless or autonomous</p>
                <p>- The robot should be self-powered with supply not exceeding 12V (on board power supply).</p>
                <p>- A robot can push or hit the ball. It cannot withhold or grab the ball</p>
