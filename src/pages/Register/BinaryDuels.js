@@ -6,6 +6,7 @@ import bytewars from '../../assets/compressed/bytewars.jpg';
 import rulebook from '../../assets/rulebook.pdf';
 import character1 from '../../assets/compressed/character1.jpg';
 import backgroundImg from '../../assets/demo.jpg';
+const [iframeLoaded, setIframeLoaded] = useState(false);
 
 export const eventRules = {
   "Binary Duels": { min: 1, max: 2 },
@@ -94,6 +95,9 @@ const Register = () => {
   const handleProceedClick = () => {
     setShowRegistrationForm(true);
   };
+   if (loading) {
+  return <Loading />;
+}
 
   if (registrationClosed) {
     return (
@@ -106,15 +110,19 @@ const Register = () => {
 
   if (clicked) {
     return (
-      <div style={{ display: iframe ? 'block' : 'none' }}>
-        <iframe
-          onLoad={() => setIframe(true)}
-          width="100%"
-          height="100%"
-          style={{ border: 'none', minHeight: "100vh" }}
+     <> {!iframeLoaded && <Loading />}
+      <iframe
+        onLoad={() => setIframeLoaded(true)}
+        width="100%"
+        height="100%"
+        style={{
+          display: iframeLoaded ? 'block' : 'none',
+          border: 'none',
+          minHeight: "100vh"
+        }}
            src="https://www.yepdesk.com/embed/buy-tickets/68233671c9e77c0001f16969/private/41854nuhco"
         />
-      </div>
+      </>
     );
   }
 
