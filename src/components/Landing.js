@@ -305,7 +305,7 @@ const Landing = () => {
       title: "Cyber Track",
       img: "https://res.cloudinary.com/dfli7mciv/image/upload/v1747151257/droidrace_dojqd3.jpg",
       about: "Race your innovation, follow the line, and conquer the track!",
-      date: "10:30 PM",
+      date: "10:30 AM",
       venue: "Indoor Stadium",
       route: "/register/cybertrack"
     },
