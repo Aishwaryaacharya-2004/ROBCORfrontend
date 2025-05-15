@@ -118,8 +118,7 @@ const Register = () => {
   // Payment iframe page
   if (clicked) {
     return (
-      <>
-      {!iframeLoaded && <Loading />}
+    <> {!iframeLoaded && <Loading />}
       <iframe
         onLoad={() => setIframeLoaded(true)}
         width="100%"
