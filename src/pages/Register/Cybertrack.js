@@ -35,6 +35,8 @@ const Register = () => {
   const [registrationClosed, setRegistrationClosed] = useState(false); // toggle manually if needed
   const [animateImage, setAnimateImage] = useState(false);
   const [validForm, setValidForm] = useState(false);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+  import Loading from '../../components/Loading.js';
   
   useEffect(() => {
     setAnimateImage(true);
@@ -93,6 +95,9 @@ const Register = () => {
   const handleProceedClick = () => {
     setShowRegistrationForm(true);
   };
+  if (loading) {
+  return <Loading />;
+}
 
   if (registrationClosed) {
     return (
@@ -106,15 +111,20 @@ const Register = () => {
   // Payment iframe page
   if (clicked) {
     return (
-      <div style={{ display: iframe ? 'block' : 'none' }}>
-        <iframe
-          onLoad={() => setIframe(true)}
-          width="100%"
-          height="100%"
-          style={{ border: 'none', minHeight: "100vh" }}
+     <>
+      {!iframeLoaded && <Loading />}
+      <iframe
+        onLoad={() => setIframeLoaded(true)}
+        width="100%"
+        height="100%"
+        style={{
+          display: iframeLoaded ? 'block' : 'none',
+          border: 'none',
+          minHeight: "100vh"
+        }}
           src="https://www.yepdesk.com/embed/buy-tickets/68233da6c9e77c0001f177e1/private/ee2fbnk06p"
         />
-      </div>
+      </>
     );
   }
 
