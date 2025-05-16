@@ -22,7 +22,7 @@ export const eventRules = {
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phoneRegex = /^[6-9]\d{9}$/;
-const usnRegex = /^[1-9][A-Z]{2}\d{2}[A-Z]{2}\d{3}$/i;
+//const usnRegex = /^[1-9][A-Z]{2}\d{2}[A-Z]{2}\d{3}$/i;
 
 const Register = () => {
   const [showRegistrationForm, setShowRegistrationForm] = useState(false);
@@ -53,8 +53,7 @@ const Register = () => {
             (p) =>
               p.name.trim() !== "" &&
               emailRegex.test(p.email) &&
-              phoneRegex.test(p.phone) &&
-              usnRegex.test(p.usn)
+              phoneRegex.test(p.phone) 
           );
           setValidForm(isValid);
         }, [formData]);
@@ -223,7 +222,7 @@ const Register = () => {
                              name="usn"
                              value={participant.usn}
                              onChange={(e) => handleChange(index, e)}
-                             isInvalid={participant.usn && !usnRegex.test(participant.usn)}
+                             
                              required
                            />
                          </Form.Group>
@@ -296,6 +295,10 @@ const Register = () => {
                               <p className="cyber-head"><strong >Venue:</strong>Canteen 1st Floor</p>
                               <p className="cyber-head"><strong >Team Size:</strong> {eventRules[selectedEvent].min} - {eventRules[selectedEvent].max}</p>
                               <p className="cyber-head"><strong >Fee:</strong> ₹400</p>
+                <div className="flex gap-4 cyber-head ">
+  <p>1st Prize : 5 K</p>
+  <p>2nd Prize : 3 K</p>
+</div>
                       
            <h4 className="mt-4">Event Rules:</h4>
            <div className="content">
