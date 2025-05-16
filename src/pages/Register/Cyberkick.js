@@ -330,7 +330,7 @@ const Register = () => {
          RULE BOOK
        </a>
        <button className="cyber-button" onClick={handleProceedClick}>
-         PROCEED
+         REGISTER
        </button>
      </div>
    </div>
