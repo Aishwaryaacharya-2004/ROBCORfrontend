@@ -53,8 +53,7 @@ const Register = () => {
           (p) =>
             p.name.trim() !== "" &&
             emailRegex.test(p.email) &&
-            phoneRegex.test(p.phone) &&
-            usnRegex.test(p.usn)
+            phoneRegex.test(p.phone)
         );
         setValidForm(isValid);
       }, [formData]);
