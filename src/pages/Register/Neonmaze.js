@@ -302,15 +302,13 @@ const Register = () => {
                       
            <h4 className="mt-4">Event Rules:</h4>
            <div className="content">
-     <p>- The arena will consist of the following terrains: Pebble, Sand, Water, Bumps, Wedges and Other obstacles.</p>
-  <p>- The width of the track will be 65cm </p>
- <p>- If the bot goes out of the track, penalty time will be added to the final track completion time</p>
- <p>- The bot should fit in a box of dimensions 30cm x 30cm x 30cm</p>
- <p>- The power supply used can be a maximum of 12 Volts which can either be on board or off board. IC Engines are not allowed</p>
- <p>- The event will be carried out in two rounds</p>
- <p>- In qualifying round, the bot has to pass through maximum number of checkpoints in a given time</p>
- <p>- Only 2 members of a team are allowed to control the bot during the race</p>
- <p>- The bot will be disqualified if any part fails or falls off in the arena and is unable to continue</p>
+     <p>Teams must build their own wireless controlled Car for this event and no Lego Kit bots are allowed.</p>
+                   <p>The maximum dimensions of the wireless controlled Car should be 17cm (width) x 17cm (length) x 12cm (height).</p>
+                   <p>Robot must be controlled manually via wireless communication (Ex: Bluetooth, RF, Wi-Fi).</p>
+                   <p>Rules of the event: The cars are required to find their way out of a 3- dimensional maze collecting the coins along the way (Both positive and negative points for coins will be allotted).</p>
+                   <p>At the start of the race each team will be having X (to be decided on event day) amount of points which will keep decreasing by some points after each interval of time.</p>
+                   <p>The participants have to guide their car in an obstacle filled course. The obstacle course will test the car's speed and robustness.</p>
+
  
      
      </div>
