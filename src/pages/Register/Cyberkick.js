@@ -300,7 +300,7 @@ const Register = () => {
          <div className="col-md-6">
            <h2 className="mt-4">{selectedEvent}</h2>
            <p className="cyber-head" ><strong >Timing:</strong> 10:30 AM</p>
-           <p className="cyber-head"><strong >Venue:</strong> Canteen 1st Floor</p>
+           <p className="cyber-head"><strong >Venue:</strong>AICTE Lab</p>
            <p className="cyber-head"><strong >Team Size:</strong> {eventRules[selectedEvent].min} - {eventRules[selectedEvent].max}</p>
            <p className="cyber-head"><strong >Fee:</strong> ₹400</p>
            <div className="flex gap-4 cyber-head ">
