@@ -303,11 +303,11 @@ const Register = () => {
            <h4 className="mt-4">Event Rules:</h4>
            <div className="content">
      <p>Teams must build their own wireless controlled Car for this event and no Lego Kit bots are allowed.</p>
-                   <p>The maximum dimensions of the wireless controlled Car should be 17cm (width) x 17cm (length) x 12cm (height).</p>
-                   <p>Robot must be controlled manually via wireless communication (Ex: Bluetooth, RF, Wi-Fi).</p>
-                   <p>Rules of the event: The cars are required to find their way out of a 3- dimensional maze collecting the coins along the way (Both positive and negative points for coins will be allotted).</p>
-                   <p>At the start of the race each team will be having X (to be decided on event day) amount of points which will keep decreasing by some points after each interval of time.</p>
-                   <p>The participants have to guide their car in an obstacle filled course. The obstacle course will test the car's speed and robustness.</p>
+                   <p>- The maximum dimensions of the wireless controlled Car should be 17cm (width) x 17cm (length) x 12cm (height).</p>
+                   <p>- Robot must be controlled manually via wireless communication (Ex: Bluetooth, RF, Wi-Fi).</p>
+                   <p>- Rules of the event: The cars are required to find their way out of a 3- dimensional maze collecting the coins along the way (Both positive and negative points for coins will be allotted).</p>
+                   <p>- At the start of the race each team will be having X (to be decided on event day) amount of points which will keep decreasing by some points after each interval of time.</p>
+                   <p>- The participants have to guide their car in an obstacle filled course. The obstacle course will test the car's speed and robustness.</p>
 
  
      
