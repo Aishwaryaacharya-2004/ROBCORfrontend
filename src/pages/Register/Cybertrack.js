@@ -4,7 +4,7 @@ import Loading from '../../components/Loading.js';
 import axios from "axios";
 import './register.css';
 import droidrace from '../../assets/compressed/droidrace.jpg';
-import rulebook from '../../assets/rulebook.pdf';
+import rulebook from '../../assets/rulebook(2).pdf';
 import character3 from '../../assets/compressed/character3.jpg';
 import backgroundImg from '../../assets/demo.jpg';
 
