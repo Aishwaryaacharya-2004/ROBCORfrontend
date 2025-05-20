@@ -3,7 +3,7 @@ import { Container, Form, Button, Alert, Spinner } from "react-bootstrap";
 import axios from "axios";
 import './register.css';
 import bytewars from '../../assets/compressed/bytewars.jpg';
-import rulebook from '../../assets/rulebook(2).pdf';
+import rulebook from '../../assets/rulebook.pdf';
 import character1 from '../../assets/compressed/character1.jpg';
 import backgroundImg from '../../assets/demo.jpg';
 import Loading from '../../components/Loading.js';
