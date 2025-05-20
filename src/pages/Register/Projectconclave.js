@@ -4,7 +4,7 @@ import Loading from '../../components/Loading.js';
 import axios from "axios";
 import './register.css';
 import projectSymposium from '../../assets/compressed/projectSymposium.jpg';
-import rulebook from '../../assets/rulebook.pdf';
+import rulebook from '../../assets/rulebook(2).pdf';
 import ppt from '../../assets/ProjectSymposium_ppt_template.pptx'
 import character4 from '../../assets/compressed/character4.jpg';
 import backgroundImg from '../../assets/demo.jpg';
