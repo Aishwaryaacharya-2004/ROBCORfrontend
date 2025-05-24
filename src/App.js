@@ -15,43 +15,36 @@ import RegisterBgmi from './pages/Register/Bgmipunks.js';
 import Certificate from './pages/certificate/Certificate.js';
 import PaymentSuccess from './components/Paymentsucess.js';
 import NotFoundPage from './pages/Notfound.js';
-//import usePageTracking from './components/UsePageTracking.js';
-
-//import ReactGA from 'react-ga4';
-
-//ReactGA.initialize('G-HM7B4BL0YK'); 
-
-//ReactGA.send({ hitType: "pageview", page: window.location.pathname });
-
-
 
 const App = () => {
-  const homeRef = useRef();
-  //usePageTracking(); 
+  const homeRef = useRef();
 
-  return (
-    <Router>
-      <Navbar homeRef={homeRef} />
-      <Routes>
-        <Route path="/" element={<Landing homeRef={homeRef} />} />
-        <Route path="/register/binaryduels" element={<RegisterBinaryDuels />} />
-        <Route path="/register/cyberkick" element={<RegisterCyberKick />} /> 
-        <Route path="/register/cybertrack" element={<RegisterCyberTrack />} />
-        <Route path="/register/projectconclave" element={<RegisterProjectConclave />} />
-        <Route path="/register/nexusquiz" element={<RegisterNexusQuiz />} />
-        <Route path="/register/neonrun" element={<RegisterNeonRun />} />
-        <Route path="/register/neonmaze" element={<RegisterNeonMaze />} />
-        <Route path="/register/arduinoforge" element={<Registerarduinoforge />} />
-        <Route path="/register/bgmipunks" element={<RegisterBgmi />} />
-        <Route path="/certificate/certificate" element={<Certificate />} />
-        <Route path="/payment-success" element={<PaymentSuccess />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-      <div id="contacts">
-        <Footer />
-      </div>
-    </Router>
-  );
+  return (
+    <Router>
+      <Navbar homeRef={homeRef} />
+      <Routes>
+        <Route path="/" element={<Landing homeRef={homeRef} />} />
+        <Route path="/register/binaryduels" element={<RegisterBinaryDuels />} />
+        <Route path="/register/cyberkick" element={<RegisterCyberKick />} /> 
+        <Route path="/register/cybertrack" element={<RegisterCyberTrack />} />
+        <Route path="/register/projectconclave" element={<RegisterProjectConclave />} />
+        <Route path="/register/nexusquiz" element={<RegisterNexusQuiz />} />
+        <Route path="/register/neonrun" element={<RegisterNeonRun />} />
+        <Route path="/register/neonmaze" element={<RegisterNeonMaze />} />
+        <Route path="/register/arduinoforge" element={<Registerarduinoforge />} />
+        <Route path="/register/bgmipunks" element={<RegisterBgmi />} />
+
+        {/* ✅ Updated certificate route */}
+        <Route path="/certificate" element={<Certificate />} />
+
+        <Route path="/payment-success" element={<PaymentSuccess />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+      <div id="contacts">
+        <Footer />
+      </div>
+    </Router>
+  );
 };
 
 export default App;
