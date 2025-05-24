@@ -9,10 +9,16 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const navItems = ["Home", "Events", "Sponsors", "About", "Contacts"];
+  const navItems = ["Home", "Events", "Sponsors", "About", "Certificate"];
 
   const handleNavClick = (id) => {
     setMenuOpen(false);
+     if (id === "certificate") {
+      // Navigate to certificate route directly
+      navigate("/certificate");
+      return;
+    }
+
     if (location.pathname !== "/") {
       navigate("/", { state: { scrollTo: id } });
     } else {
