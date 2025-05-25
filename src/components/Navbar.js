@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
-import logo from "../assets/Logo.png";
+//import menuBg from "../assets/demo.jpg";
+import logo from "../assets/Logo.png"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,18 +12,18 @@ const Navbar = () => {
   const navItems = ["Home", "Events", "Sponsors", "About", "Certificate"];
 
   const handleNavClick = (id) => {
-    const lowerId = id.toLowerCase();
     setMenuOpen(false);
-
-    if (lowerId === "certificate") {
+     if (id === "certificate") {
+      // Navigate to certificate route directly
       navigate("/certificate");
+      return;
+    }
+
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollTo: id } });
     } else {
-      if (location.pathname !== "/") {
-        navigate("/", { state: { scrollTo: lowerId } });
-      } else {
-        const el = document.getElementById(lowerId);
-        if (el) el.scrollIntoView({ behavior: "smooth" });
-      }
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -32,7 +33,7 @@ const Navbar = () => {
       if (el) {
         setTimeout(() => {
           el.scrollIntoView({ behavior: "smooth" });
-        }, 100); // slight delay ensures DOM is ready
+        }, 100);
         window.history.replaceState({}, document.title);
       }
     }
@@ -41,20 +42,20 @@ const Navbar = () => {
   return (
     <nav className="navbar" role="navigation">
       <div className="logo">
-        <img src={logo} alt="Logo" className="logo-img" />
-      </div>
+  <img src={logo} alt="Logo" className="logo-img" />
+</div>
 
-      {/* Desktop Navigation */}
+      {/* Desktop Nav - Only show when menu is NOT open */}
       {!menuOpen && (
         <ul className="nav-links">
           {navItems.map((item, idx) => (
             <li key={idx}>
-              <button
-                onClick={() => handleNavClick(item)}
+              <a
+                onClick={() => handleNavClick(item.toLowerCase())}
                 className="nav-button"
               >
                 {item}
-              </button>
+              </a>
             </li>
           ))}
         </ul>
@@ -64,36 +65,35 @@ const Navbar = () => {
       <div
         className={`hamburger ${menuOpen ? "open" : ""}`}
         onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle Menu"
+        aria-label="Menu Toggle"
       >
         <div className="bar"></div>
         <div className="bar"></div>
         <div className="bar"></div>
       </div>
 
-      {/* Mobile Overlay */}
+      {/* Mobile Menu Overlay */}
       {menuOpen && (
         <div
           className="overlay"
-          style={{
-            backgroundImage: `url("https://res.cloudinary.com/dfli7mciv/image/upload/v1747155680/image_w4iog5.jpg")`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
+          style={{ backgroundImage: `url("https://res.cloudinary.com/dfli7mciv/image/upload/v1747155680/image_w4iog5.jpg")`, backgroundSize: 'auto', // Prevent zooming or stretching
+      backgroundPosition: 'center', // Center the image
+      backgroundRepeat: 'no-repeat', }}
         >
-          <ul className="overlay-menu">
+          <div>
+            <ul className="overlay-menu">
             {navItems.map((item, idx) => (
               <li key={idx}>
-                <button
+                <a
                   className="btn neon-btn"
-                  onClick={() => handleNavClick(item)}
+                  onClick={() => handleNavClick(item.toLowerCase())}
                 >
                   {item}
-                </button>
+                </a>
               </li>
             ))}
           </ul>
+          </div>
         </div>
       )}
     </nav>
