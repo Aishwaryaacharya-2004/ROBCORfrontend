@@ -110,7 +110,7 @@ function Certificate() {
 
   return (
     <div className="cyber-bg">
-      <h1 className="neon-text">Certificate Generator</h1>
+      <h1 className="neon-text">ROBOCOR '25 Certificates</h1>
 
       <img
         src="https://res.cloudinary.com/dfli7mciv/image/upload/v1748098054/notfound_mea7cs.png"
